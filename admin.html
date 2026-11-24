@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Komicrew — Operations HQ &amp; Admin Control Center</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/panelpulse.css" />
+</head>
+<body class="admin-page-body">
+
+<header id="global-header" role="banner">
+  <div class="nav-wrapper">
+    <nav id="primary-nav" aria-label="Admin navigation">
+      <div class="nav-inner">
+        <!-- Brand -->
+        <a href="index.html" class="brand-logo" aria-label="Komicrew Home">
+          <span class="logo-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <!-- Geometric Komicrew Icon with Action Slash -->
+              <rect x="4" y="4" width="4" height="20" rx="1.5" fill="#111827"/>
+              <path d="M19 4L9 14h5.5l9.5-10h-5z" fill="#F43F5E" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M11 14l9 10h5.5L16.5 14h-5.5z" fill="#8B5CF6" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+              <polygon points="23,11 26,12.5 24,14 27,17 22,15.5 21,19 20,15 17,15 19,13 17,11 21,12" fill="#06B6D4" stroke="#111827" stroke-width="1"/>
+            </svg>
+          </span>
+          <span class="logo-wordmark"><span class="logo-komi">Komi</span><span class="logo-crew">crew</span></span>
+          <span class="admin-badge-pill" style="margin-left: 8px;">ADMIN HQ</span>
+        </a>
+
+        <!-- Header Actions -->
+        <div class="nav-quick-actions">
+          <a href="index.html" class="btn btn--ghost btn--sm" aria-label="View live platform">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7s2.5-5 6-5 6 5 6 5-2.5 5-6 5-6-5-6-5z" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="7" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
+            View Live Site
+          </a>
+          <button class="btn btn--coral btn--sm" id="admin-logout-btn" aria-label="Sign out of Operations HQ">
+            🔒 Sign Out
+          </button>
+          <button class="nav-icon-btn" id="theme-toggle" aria-label="Toggle light/dark mode" aria-pressed="false">
+            <svg class="theme-icon theme-icon--moon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M15.5 11A7 7 0 017 2.5a7 7 0 100 13 7 7 0 008.5-4.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg class="theme-icon theme-icon--sun" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="4" stroke="currentColor" stroke-width="2"/><path d="M9 1v2M9 15v2M1 9h2M15 9h2M3.2 3.2l1.4 1.4M13.4 13.4l1.4 1.4M3.2 14.8l1.4-1.4M13.4 4.6l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" class="admin-wrapper" style="margin-top: 32px;">
+
+  <!-- Admin Header Banner -->
+  <header class="admin-header-banner">
+    <div class="admin-header-left">
+      <div class="admin-badge-row">
+        <span class="admin-badge-pill">⚡ System Control Center</span>
+        <span class="admin-status-online">● Database Engine Connected</span>
+      </div>
+      <h1 class="admin-main-title">Komicrew Operations HQ</h1>
+      <p class="admin-main-subtitle">Manage landing spotlights, publish comic chapters, configure taxonomies, and monitor reader metrics in real-time.</p>
+    </div>
+    <div class="admin-header-actions">
+      <button class="btn btn--ghost btn--sm" id="admin-refresh-metrics-btn" aria-label="Refresh metrics">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7a6 6 0 112 4.47" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Sync Database
+      </button>
+      <button class="btn btn--primary btn--sm" id="admin-quick-publish-btn" aria-label="Upload new comic">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        Upload Comic
+      </button>
+    </div>
+  </header>
+
+  <!-- Quick Stats Grid -->
+  <section class="admin-stats-grid" aria-label="Platform metrics">
+    <div class="admin-stat-card">
+      <div class="admin-stat-icon-wrap admin-stat-icon--yellow" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="8" height="8" rx="2" stroke="currentColor" stroke-width="2"/><rect x="12" y="2" width="8" height="8" rx="2" stroke="currentColor" stroke-width="2"/><rect x="2" y="12" width="8" height="8" rx="2" stroke="currentColor" stroke-width="2"/><path d="M12 12l4 4 4-4" stroke="currentColor" stroke-width="2"/></svg>
+      </div>
+      <div class="admin-stat-info">
+        <span class="admin-stat-label">Total Comics</span>
+        <strong class="admin-stat-value" id="stat-total-comics">48</strong>
+        <span class="admin-stat-trend admin-trend--up">▲ +6 this week</span>
+      </div>
+    </div>
+
+    <div class="admin-stat-card">
+      <div class="admin-stat-icon-wrap admin-stat-icon--coral" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L13.5 8H20L14.5 12L16.5 18.5L11 14.5L5.5 18.5L7.5 12L2 8H8.5L11 2Z" fill="currentColor" stroke="#111827" stroke-width="1.5"/></svg>
+      </div>
+      <div class="admin-stat-info">
+        <span class="admin-stat-label">AI Panels Generated</span>
+        <strong class="admin-stat-value" id="stat-total-panels">14,280</strong>
+        <span class="admin-stat-trend admin-trend--up">▲ +1,420 today</span>
+      </div>
+    </div>
+
+    <div class="admin-stat-card">
+      <div class="admin-stat-icon-wrap admin-stat-icon--cyan" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M3 19c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="admin-stat-info">
+        <span class="admin-stat-label">Active Readers</span>
+        <strong class="admin-stat-value" id="stat-active-readers">128.4K</strong>
+        <span class="admin-stat-trend admin-trend--up">▲ +12.8% vs last month</span>
+      </div>
+    </div>
+
+    <div class="admin-stat-card">
+      <div class="admin-stat-icon-wrap admin-stat-icon--purple" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4h14v14H4V4z" stroke="currentColor" stroke-width="2"/><path d="M4 10h14M10 4v14" stroke="currentColor" stroke-width="1.5"/></svg>
+      </div>
+      <div class="admin-stat-info">
+        <span class="admin-stat-label">Storage Used</span>
+        <strong class="admin-stat-value" id="stat-storage-used">84.6 GB</strong>
+        <span class="admin-stat-sub">of 500 GB Cap (17%)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admin Navigation Tabs -->
+  <nav class="admin-tabs-nav" role="tablist" aria-label="Admin sections">
+    <button class="admin-tab-btn admin-tab-btn--active" role="tab" id="admin-tab-catalog" aria-selected="true" aria-controls="admin-panel-catalog" data-admin-tab="catalog">
+      <span>📚 Catalog &amp; Visibility</span>
+    </button>
+    <button class="admin-tab-btn" role="tab" id="admin-tab-users" aria-selected="false" aria-controls="admin-panel-users" data-admin-tab="users">
+      <span>👥 Users &amp; Premium Access</span>
+    </button>
+    <button class="admin-tab-btn" role="tab" id="admin-tab-hero" aria-selected="false" aria-controls="admin-panel-hero" data-admin-tab="hero">
+      <span>⭐ Trending &amp; Hero Manager</span>
+    </button>
+    <button class="admin-tab-btn" role="tab" id="admin-tab-uploads" aria-selected="false" aria-controls="admin-panel-uploads" data-admin-tab="uploads">
+      <span>🖼️ Uploaded Panels &amp; Media</span>
+    </button>
+    <button class="admin-tab-btn" role="tab" id="admin-tab-uploader" aria-selected="false" aria-controls="admin-panel-uploader" data-admin-tab="uploader">
+      <span>🚀 Comic Uploader</span>
+    </button>
+    <button class="admin-tab-btn" role="tab" id="admin-tab-taxonomies" aria-selected="false" aria-controls="admin-panel-taxonomies" data-admin-tab="taxonomies">
+      <span>🏷️ Taxonomies</span>
+    </button>
+    <button class="admin-tab-btn" role="tab" id="admin-tab-creators" aria-selected="false" aria-controls="admin-panel-creators" data-admin-tab="creators">
+      <span>🎨 Creator Spotlight</span>
+    </button>
+  </nav>
+
+  <!-- ─── SUBPANEL 1: CATALOG MANAGER & VISIBILITY TOGGLES ─── -->
+  <div id="admin-panel-catalog" class="admin-subpanel" role="tabpanel" aria-labelledby="admin-tab-catalog">
+    <div class="admin-card">
+      <div class="admin-card-header">
+        <div>
+          <h2 class="admin-card-title">Live Comic Catalog &amp; Visibility Controls</h2>
+          <p class="admin-card-desc">Publish comics from creators, toggle trending spotlight status, or manage reader visibility in real time.</p>
+        </div>
+        <div class="admin-filter-input-wrap">
+          <input type="search" id="admin-catalog-search" class="studio-input studio-input--sm" placeholder="Search catalog..." aria-label="Filter comics table"/>
+        </div>
+      </div>
+
+      <div class="admin-table-responsive">
+        <table class="admin-table" id="admin-comics-table">
+          <thead>
+            <tr>
+              <th scope="col">Cover</th>
+              <th scope="col">Title &amp; Creator</th>
+              <th scope="col">Genre / Category</th>
+              <th scope="col">Type</th>
+              <th scope="col">Status</th>
+              <th scope="col">Trending Spotlight</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="admin-comics-tbody">
+            <!-- Populated dynamically via database -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SUBPANEL 2: USER & PREMIUM TIER ACCESS MANAGEMENT ─── -->
+  <div id="admin-panel-users" class="admin-subpanel" role="tabpanel" aria-labelledby="admin-tab-users" hidden>
+    <div class="admin-card">
+      <div class="admin-card-header">
+        <div>
+          <h2 class="admin-card-title">User Accounts &amp; Premium Access Control</h2>
+          <p class="admin-card-desc">Manage registered readers and creators, upgrade accounts to Pro/Creator tiers, or grant administrator access.</p>
+        </div>
+        <div class="admin-filter-input-wrap">
+          <input type="search" id="admin-users-search" class="studio-input studio-input--sm" placeholder="Search users by handle/email..." aria-label="Filter users"/>
+        </div>
+      </div>
+
+      <div class="admin-table-responsive">
+        <table class="admin-table" id="admin-users-table">
+          <thead>
+            <tr>
+              <th scope="col">User</th>
+              <th scope="col">Email</th>
+              <th scope="col">Role</th>
+              <th scope="col">Subscription Tier</th>
+              <th scope="col">Registered</th>
+              <th scope="col">Quick Tier Action</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="admin-users-tbody">
+            <!-- Populated dynamically via database -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SUBPANEL 3: FEATURED / TRENDING HERO MANAGER ─── -->
+  <div id="admin-panel-hero" class="admin-subpanel" role="tabpanel" aria-labelledby="admin-tab-hero" hidden>
+    <div class="admin-grid-2col">
+      <div class="admin-card">
+        <h2 class="admin-card-title">Select #1 Trending Hero Spotlight</h2>
+        <p class="admin-card-desc">Choose which comic banner is featured as the prime attraction on the visitor landing page.</p>
+
+        <form id="hero-manager-form" class="hero-selector-list" aria-label="Hero comic selector">
+          <!-- Populated dynamically from database -->
+          <div id="hero-radio-container" style="display:flex; flex-direction:column; gap:10px;">
+            <p style="color:var(--text-muted); font-size:0.9rem;">Loading live database comics...</p>
+          </div>
+        </form>
+        <div class="admin-form-actions">
+          <button type="button" class="btn btn--primary" id="save-hero-spotlight-btn">Apply Hero Spotlight</button>
+        </div>
+      </div>
+
+      <div class="admin-card admin-card--preview">
+        <div class="admin-preview-header">
+          <span class="admin-preview-label">LIVE VISITOR HERO PREVIEW</span>
+        </div>
+        <div class="hero-live-preview-box" id="hero-live-preview-box">
+          <div class="hero-preview-badge">#1 TRENDING SPOTLIGHT</div>
+          <h3 class="hero-preview-title" id="hero-preview-title">No Comic Selected</h3>
+          <p class="hero-preview-synopsis" id="hero-preview-synopsis">Select a comic from your database to set it as the live hero banner.</p>
+          <div class="hero-preview-meta" id="hero-preview-meta">by — &middot; — &middot; ⭐ 5.0</div>
+          <div class="hero-preview-actions">
+            <span class="btn btn--primary btn--sm">Read Now &mdash; Ch. 1</span>
+            <span class="btn btn--ghost btn--sm">Fork &amp; Remix</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SUBPANEL 4: UPLOADED PANELS & GALLERY AUDITOR ─── -->
+  <div id="admin-panel-uploads" class="admin-subpanel" role="tabpanel" aria-labelledby="admin-tab-uploads" hidden>
+    <div class="admin-card">
+      <div class="admin-card-header">
+        <div>
+          <h2 class="admin-card-title">Uploaded Comic Panels &amp; Media Gallery</h2>
+          <p class="admin-card-desc">Review all images, chapter panels, and AI illustrations uploaded by users and administrators.</p>
+        </div>
+        <button type="button" class="btn btn--ghost btn--sm" id="admin-refresh-uploads-btn">🔄 Refresh Gallery</button>
+      </div>
+
+      <div class="admin-uploads-gallery" id="admin-uploads-gallery" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 16px;">
+        <!-- Populated dynamically via database -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SUBPANEL 3: COMIC & CHAPTER UPLOADER ─── -->
+  <div id="admin-panel-uploader" class="admin-subpanel" role="tabpanel" aria-labelledby="admin-tab-uploader" hidden>
+    <div class="admin-card">
+      <h2 class="admin-card-title">Upload New Comic Series or Chapter</h2>
+      <p class="admin-card-desc">Publish new original or AI-generated comic works to the platform library.</p>
+
+      <form id="admin-uploader-form" class="admin-form-grid" novalidate>
+        <div class="studio-form-row studio-form-row--two-col">
+          <div class="studio-form-group">
+            <label class="studio-label" for="admin-comic-title">Comic Title <span aria-hidden="true">*</span></label>
+            <input type="text" id="admin-comic-title" name="title" class="studio-input" placeholder="e.g. Cyber Ronin 2099" required/>
+          </div>
+          <div class="studio-form-group">
+            <label class="studio-label" for="admin-creator-name">Author / Artist Handle <span aria-hidden="true">*</span></label>
+            <input type="text" id="admin-creator-name" name="creator" class="studio-input" placeholder="e.g. @cyber_samurai" required/>
+          </div>
+        </div>
+
+        <div class="studio-form-group">
+          <label class="studio-label" for="admin-synopsis">Synopsis &amp; Blurb</label>
+          <textarea id="admin-synopsis" name="synopsis" class="studio-textarea" rows="3" placeholder="Engaging summary of the storyline and world-building..."></textarea>
+        </div>
+
+        <div class="studio-form-row studio-form-row--three-col">
+          <div class="studio-form-group">
+            <label class="studio-label" for="admin-category-select">Category</label>
+            <select id="admin-category-select" name="category" class="select-input">
+              <option value="shonen">Shonen</option>
+              <option value="seinen" selected>Seinen</option>
+              <option value="romance">Romance</option>
+              <option value="isekai">Isekai</option>
+              <option value="webtoon-originals">Webtoon Originals</option>
+              <option value="slice-of-life">Slice of Life</option>
+            </select>
+          </div>
+          <div class="studio-form-group">
+            <label class="studio-label" for="admin-style-select">Art Style</label>
+            <select id="admin-style-select" name="style" class="select-input">
+              <option value="tactile-neo-comic" selected>Tactile Neo-Comic</option>
+              <option value="90s-anime">90s Anime</option>
+              <option value="noir-ink">Noir Ink</option>
+              <option value="watercolor">Watercolor</option>
+              <option value="chibi">Chibi</option>
+            </select>
+          </div>
+          <div class="studio-form-group">
+            <label class="studio-label" for="admin-age-rating">Age Rating</label>
+            <select id="admin-age-rating" name="age_rating" class="select-input">
+              <option value="all-ages">All Ages (G)</option>
+              <option value="teen" selected>Teen 13+ (PG-13)</option>
+              <option value="mature">Mature 18+ (R)</option>
+            </select>
+          </div>
+        </div>
+
+        <fieldset class="studio-fieldset">
+          <legend class="studio-legend">Select Genres</legend>
+          <div class="admin-genre-checkbox-pills" id="admin-genre-pills-list">
+            <label class="genre-toggle-pill"><input type="checkbox" name="admin_genres" value="action" checked/><span>💥 Action</span></label>
+            <label class="genre-toggle-pill"><input type="checkbox" name="admin_genres" value="cyberpunk" checked/><span>🤖 Cyberpunk</span></label>
+            <label class="genre-toggle-pill"><input type="checkbox" name="admin_genres" value="fantasy"/><span>🐉 Fantasy</span></label>
+            <label class="genre-toggle-pill"><input type="checkbox" name="admin_genres" value="horror"/><span>👁️ Horror</span></label>
+            <label class="genre-toggle-pill"><input type="checkbox" name="admin_genres" value="comedy"/><span>😂 Comedy</span></label>
+            <label class="genre-toggle-pill"><input type="checkbox" name="admin_genres" value="mystery"/><span>🔍 Mystery</span></label>
+            <label class="genre-toggle-pill"><input type="checkbox" name="admin_genres" value="sci-fi"/><span>🚀 Sci-Fi</span></label>
+            <label class="genre-toggle-pill"><input type="checkbox" name="admin_genres" value="romance"/><span>💕 Romance</span></label>
+          </div>
+        </fieldset>
+
+        <div class="studio-form-row studio-form-row--two-col">
+          <div class="studio-form-group">
+            <label class="studio-label">Poster / Cover Artwork</label>
+            <div class="admin-dropzone" id="cover-dropzone" tabindex="0" role="button" aria-label="Upload poster image">
+              <input type="file" id="cover-file-input" accept="image/*" class="sr-only"/>
+              <div class="dropzone-content" id="cover-dropzone-content">
+                <span class="dropzone-icon" aria-hidden="true">🖼️</span>
+                <strong>Drag &amp; drop cover image</strong>
+                <span>or click to browse (PNG, JPG, WebP)</span>
+              </div>
+              <div class="dropzone-preview" id="cover-dropzone-preview" hidden>
+                <img src="" alt="Cover preview" id="cover-preview-img"/>
+                <button type="button" class="btn btn--sm btn--ghost dropzone-remove-btn" id="cover-remove-btn">Change</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="studio-form-group">
+            <label class="studio-label">Chapter Panel Strip (Batch Upload)</label>
+            <div class="admin-dropzone" id="panels-dropzone" tabindex="0" role="button" aria-label="Upload chapter panels">
+              <input type="file" id="panels-file-input" accept="image/*" multiple class="sr-only"/>
+              <div class="dropzone-content" id="panels-dropzone-content">
+                <span class="dropzone-icon" aria-hidden="true">📑</span>
+                <strong>Drag &amp; drop panel images</strong>
+                <span>Supports multi-file batch upload</span>
+              </div>
+              <div class="dropzone-preview" id="panels-dropzone-preview" hidden>
+                <div class="panels-batch-count" id="panels-batch-count">0 panels selected</div>
+                <button type="button" class="btn btn--sm btn--ghost dropzone-remove-btn" id="panels-remove-btn">Change</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-form-actions">
+          <button type="submit" class="btn btn--primary" id="admin-submit-comic-btn">🚀 Publish Comic to Live Platform</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ─── SUBPANEL 4: GENRE, CATEGORY & ART STYLE TAXONOMIES ─── -->
+  <div id="admin-panel-taxonomies" class="admin-subpanel" role="tabpanel" aria-labelledby="admin-tab-taxonomies" hidden>
+    <div class="admin-card">
+      <h2 class="admin-card-title">Taxonomy &amp; Tag Manager</h2>
+      <p class="admin-card-desc">Add, edit, and organize genres, story categories, and visual art style descriptors across the site.</p>
+
+      <div class="taxonomy-columns-grid">
+        <div class="taxonomy-col">
+          <h3 class="taxonomy-col-title">Story Categories</h3>
+          <div class="taxonomy-pill-list" id="taxonomy-categories-list">
+            <span class="tax-badge">Shonen <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">Seinen <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">Romance <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">Isekai <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">Webtoon Originals <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">Slice of Life <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+          </div>
+          <div class="tax-add-group">
+            <input type="text" class="studio-input studio-input--sm" id="new-category-input" placeholder="New Category..."/>
+            <button type="button" class="btn btn--primary btn--sm" id="add-category-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="taxonomy-col">
+          <h3 class="taxonomy-col-title">Genre Tags</h3>
+          <div class="taxonomy-pill-list" id="taxonomy-genres-list">
+            <span class="tax-badge">Action <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">Cyberpunk <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">Fantasy <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">Horror <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">Comedy <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">Mystery <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">Sci-Fi <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">Romance <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+          </div>
+          <div class="tax-add-group">
+            <input type="text" class="studio-input studio-input--sm" id="new-genre-input" placeholder="New Genre..."/>
+            <button type="button" class="btn btn--primary btn--sm" id="add-genre-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="taxonomy-col">
+          <h3 class="taxonomy-col-title">Art Styles</h3>
+          <div class="taxonomy-pill-list" id="taxonomy-styles-list">
+            <span class="tax-badge">Tactile Neo-Comic <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">90s Anime <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">Noir Ink <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">Watercolor <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+            <span class="tax-badge">Chibi <button type="button" class="tax-del-btn" aria-label="Delete">✕</button></span>
+          </div>
+          <div class="tax-add-group">
+            <input type="text" class="studio-input studio-input--sm" id="new-style-input" placeholder="New Style..."/>
+            <button type="button" class="btn btn--primary btn--sm" id="add-style-btn">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SUBPANEL 5: ARTIST & CREATOR SPOTLIGHT MANAGER ─── -->
+  <div id="admin-panel-creators" class="admin-subpanel" role="tabpanel" aria-labelledby="admin-tab-creators" hidden>
+    <div class="admin-card">
+      <h2 class="admin-card-title">Creator &amp; Artist Spotlight Editor</h2>
+      <p class="admin-card-desc">Feature creators on the discovery feed and assign verified artist credentials.</p>
+
+      <form id="admin-creator-form" class="admin-form-grid" novalidate>
+        <div class="studio-form-row studio-form-row--two-col">
+          <div class="studio-form-group">
+            <label class="studio-label" for="creator-handle-input">Creator Username / Handle <span aria-hidden="true">*</span></label>
+            <input type="text" id="creator-handle-input" class="studio-input" placeholder="e.g. @creator_handle" required/>
+          </div>
+          <div class="studio-form-group">
+            <label class="studio-label" for="creator-badge-select">Creator Badge / Tier</label>
+            <select id="creator-badge-select" class="select-input">
+              <option value="featured" selected>⭐ Featured Creator</option>
+              <option value="master">🏆 Master Artist</option>
+              <option value="ai-pioneer">✨ AI Studio Pioneer</option>
+              <option value="rising">🔥 Rising Talent</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="studio-form-group">
+          <label class="studio-label" for="creator-bio-input">Creator Bio / Profile Statement</label>
+          <textarea id="creator-bio-input" class="studio-textarea" rows="3" placeholder="Creator bio and art style statement..."></textarea>
+        </div>
+
+        <div class="admin-form-actions">
+          <button type="submit" class="btn btn--primary" id="save-creator-spotlight-btn">Save Creator Profile</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</main>
+
+<div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="false" aria-label="Notifications" role="status"></div>
+
+<script src="assets/js/admin.js" defer></script>
+</body>
+</html>

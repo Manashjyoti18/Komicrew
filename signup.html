@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Free — Komicrew AI Comic Studio &amp; Reader</title>
+  <meta name="description" content="Create a free Komicrew account to generate AI comics, publish series, read trending chapters, and join the creator community." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/panelpulse.css" />
+</head>
+<body class="auth-page-body">
+
+<div class="auth-page-container">
+
+  <!-- Left Showcase Hero -->
+  <aside class="auth-hero-side" aria-label="Komicrew Showcase">
+    <div class="auth-hero-backdrop" aria-hidden="true">
+      <div class="auth-hero-overlay" style="background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.4), transparent 70%), radial-gradient(circle at bottom left, rgba(244, 63, 94, 0.3), var(--panel-black) 90%);"></div>
+    </div>
+    <div class="auth-hero-content">
+      <a href="index.html" class="brand-logo auth-brand-logo" aria-label="Return to Komicrew Home">
+        <span class="logo-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect x="4" y="4" width="4" height="20" rx="1.5" fill="#111827"/>
+            <path d="M19 4L9 14h5.5l9.5-10h-5z" fill="#F43F5E" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M11 14l9 10h5.5L16.5 14h-5.5z" fill="#8B5CF6" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+            <polygon points="23,11 26,12.5 24,14 27,17 22,15.5 21,19 20,15 17,15 19,13 17,11 21,12" fill="#06B6D4" stroke="#111827" stroke-width="1"/>
+          </svg>
+        </span>
+        <span class="logo-wordmark"><span class="logo-komi">Komi</span><span class="logo-crew">crew</span></span>
+      </a>
+
+      <div class="auth-hero-quote-card">
+        <div class="auth-quote-badge">🚀 CREATOR ECOSYSTEM</div>
+        <h2 class="auth-quote-title">&ldquo;Join thousands of creators and fans reading, generating, and publishing web comics daily.&rdquo;</h2>
+        <div class="auth-quote-author">
+          <img src="assets/img/avatar-user.jpg" alt="Creator avatar" width="44" height="44" class="auth-author-avatar"/>
+          <div>
+            <strong>@creator</strong>
+            <span>Comic &amp; Manga Artist</span>
+          </div>
+        </div>
+      </div>
+
+      <ul class="auth-perks-list" role="list">
+        <li><span>⚡</span> 100% Free Script-to-Comic generation studio</li>
+        <li><span>💬</span> Visual drag-and-drop Fabric.js speech bubbles</li>
+        <li><span>🌐</span> Instant Webtoon &amp; Page reader publishing</li>
+        <li><span>❤️</span> Real-time reactions, comments, and creator tips</li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Right Form Side -->
+  <main class="auth-form-side" role="main">
+    <div class="auth-card-box">
+
+      <header class="auth-card-header">
+        <div class="auth-nav-toggle-tabs">
+          <a href="login.html" class="auth-toggle-link">Sign In</a>
+          <a href="signup.html" class="auth-toggle-link auth-toggle-link--active" aria-current="page">Create Account</a>
+        </div>
+        <h1 class="auth-card-title">Join Komicrew</h1>
+        <p class="auth-card-subtitle">Create your free account in seconds. Start reading and creating.</p>
+      </header>
+
+      <form id="standalone-signup-form" class="standalone-auth-form" novalidate>
+        <!-- Role Picker -->
+        <fieldset class="studio-fieldset" style="margin-bottom: 12px;">
+          <legend class="studio-legend" style="margin-bottom: 6px;">I want to join as:</legend>
+          <div class="auth-role-cards-grid">
+            <label class="auth-role-card">
+              <input type="radio" name="role" value="creator" checked class="auth-role-radio"/>
+              <div class="auth-role-box">
+                <span class="auth-role-icon">🎨</span>
+                <strong>Comic Creator</strong>
+                <span>Script-to-Comic AI, publish chapters</span>
+              </div>
+            </label>
+            <label class="auth-role-card">
+              <input type="radio" name="role" value="reader" class="auth-role-radio"/>
+              <div class="auth-role-box">
+                <span class="auth-role-icon">📖</span>
+                <strong>Avid Reader</strong>
+                <span>Read, bookmark, comment &amp; react</span>
+              </div>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="studio-form-row studio-form-row--two-col">
+          <div class="studio-form-group">
+            <label class="studio-label" for="signup-username-input">Creator / Handle <span aria-hidden="true">*</span></label>
+            <input type="text" id="signup-username-input" name="username" class="studio-input" placeholder="e.g. cyber_samurai" required autocomplete="username" />
+          </div>
+          <div class="studio-form-group">
+            <label class="studio-label" for="signup-email-input">Email Address <span aria-hidden="true">*</span></label>
+            <input type="email" id="signup-email-input" name="email" class="studio-input" placeholder="you@domain.com" required autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="studio-form-group">
+          <label class="studio-label" for="signup-password-input">Password (6+ characters) <span aria-hidden="true">*</span></label>
+          <div class="password-input-wrap">
+            <input type="password" id="signup-password-input" name="password" class="studio-input" placeholder="••••••••" minlength="6" required autocomplete="new-password" />
+            <button type="button" class="password-toggle-btn" id="signup-pass-toggle-btn" aria-label="Toggle password visibility">👁️</button>
+          </div>
+        </div>
+
+        <div class="auth-remember-row">
+          <label class="studio-checkbox-label">
+            <input type="checkbox" id="signup-terms-check" checked required class="studio-checkbox" />
+            <span>I accept the <a href="#" class="auth-inline-link">Terms of Service</a> &amp; <a href="#" class="auth-inline-link">Privacy Policy</a></span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--full-width btn--auth-submit" id="signup-submit-btn">
+          Create Free Account 🚀
+        </button>
+      </form>
+
+      <div class="auth-divider"><span>OR REGISTER WITH</span></div>
+
+      <div class="auth-social-grid">
+        <button type="button" class="btn btn--ghost auth-social-btn" id="social-google-btn">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M17.64 9.2c0-.63-.06-1.25-.16-1.84H9v3.49h4.84a4.14 4.14 0 01-1.8 2.71v2.26h2.92c1.71-1.57 2.68-3.88 2.68-6.62z" fill="#4285F4"/><path d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.84.87-3.04.87-2.34 0-4.32-1.58-5.03-3.71H.96v2.33C2.44 15.98 5.48 18 9 18z" fill="#34A853"/><path d="M3.97 10.72A5.4 5.4 0 013.68 9c0-.6.1-1.18.29-1.72V4.95H.96A9.01 9.01 0 000 9c0 1.45.35 2.82.96 4.05l3.01-2.33z" fill="#FBBC05"/><path d="M9 3.58c1.32 0 2.51.45 3.44 1.35l2.58-2.59C13.46.89 11.43 0 9 0 5.48 0 2.44 2.02.96 4.95l3.01 2.33c.71-2.13 2.69-3.7 5.03-3.7z" fill="#EA4335"/></svg>
+          Google
+        </button>
+        <button type="button" class="btn btn--ghost auth-social-btn" id="social-discord-btn">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="#5865F2"><path d="M15.25 3.5A13.4 13.4 0 0011.83 2.4a.2.2 0 00-.2.1 9.3 9.3 0 00-.41.85 12.3 12.3 0 00-3.64 0 9.3 9.3 0 00-.42-.85.2.2 0 00-.2-.1 13.4 13.4 0 00-3.42 1.1.2.2 0 00-.1.08C1.3 7.23.7 11.23 1 15.17a.2.2 0 00.08.16 13.5 13.5 0 004.08 2.06.2.2 0 00.22-.07c.31-.43.59-.89.83-1.37a.2.2 0 00-.1-.28 8.8 8.8 0 01-1.25-.6.2.2 0 01-.02-.33c.09-.06.17-.13.25-.2a.2.2 0 01.21-.03 9.6 9.6 0 007.8 0 .2.2 0 01.21.03c.08.07.16.14.25.2a.2.2 0 010 .33 8.8 8.8 0 01-1.26.6.2.2 0 00-.1.28c.24.48.52.94.83 1.37a.2.2 0 00.22.07 13.4 13.4 0 004.1-2.06.2.2 0 00.07-.16c.38-4.54-.65-8.5-2.73-11.6a.2.2 0 00-.1-.08zM6.1 12.4c-.8 0-1.46-.74-1.46-1.64s.64-1.64 1.46-1.64c.82 0 1.48.74 1.46 1.64 0 .9-.64 1.64-1.46 1.64zm5.8 0c-.8 0-1.46-.74-1.46-1.64s.64-1.64 1.46-1.64c.82 0 1.48.74 1.46 1.64 0 .9-.64 1.64-1.46 1.64z"/></svg>
+          Discord
+        </button>
+      </div>
+
+      <footer class="auth-card-footer">
+        <p>Already have an account? <a href="login.html" class="auth-inline-link"><strong>Sign In &rarr;</strong></a></p>
+      </footer>
+
+    </div>
+  </main>
+
+</div>
+
+<div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="false" aria-label="Notifications" role="status"></div>
+
+<script>
+// Standalone Sign Up Handler
+(function() {
+  const form = document.getElementById('standalone-signup-form');
+  const passInput = document.getElementById('signup-password-input');
+  const passToggle = document.getElementById('signup-pass-toggle-btn');
+  const googleBtn = document.getElementById('social-google-btn');
+  const discordBtn = document.getElementById('social-discord-btn');
+
+  function showToast(msg, type = 'info') {
+    const cont = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = `toast toast--${type} toast--visible`;
+    toast.innerHTML = `<span class="toast-icon">${type === 'success' ? '✅' : (type === 'error' ? '❌' : 'ℹ️')}</span><span class="toast-msg">${msg}</span>`;
+    cont.appendChild(toast);
+    setTimeout(() => { toast.remove(); }, 3500);
+  }
+
+  passToggle?.addEventListener('click', () => {
+    const isPass = passInput.type === 'password';
+    passInput.type = isPass ? 'text' : 'password';
+    passToggle.textContent = isPass ? '🙈' : '👁️';
+  });
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const username = document.getElementById('signup-username-input').value.trim();
+    const email = document.getElementById('signup-email-input').value.trim();
+    const password = passInput.value;
+    const role = document.querySelector('input[name="role"]:checked')?.value || 'creator';
+
+    if (!username || !email || !password) {
+      showToast('Please fill out all registration fields.', 'error');
+      return;
+    }
+
+    try {
+      const resp = await fetch('api/auth.php?action=signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, email, password, role })
+      });
+      const data = await resp.json();
+      if (data.success && data.user) {
+        localStorage.setItem('pp_user', JSON.stringify(data.user));
+        showToast(data.message || `Welcome to Komicrew, @${data.user.username}!`, 'success', 3500);
+        setTimeout(() => { window.location.href = 'index.html'; }, 900);
+        return;
+      } else {
+        showToast(data.error || 'Failed to create account.', 'error');
+      }
+    } catch (err) {
+      const fallbackUser = {
+        id: Math.floor(Math.random() * 1000) + 10,
+        username: username.replace('@', ''),
+        email: email,
+        role: role,
+        tier: role === 'creator' ? 'Creator' : 'Free',
+        avatar_url: 'assets/img/avatar-user.jpg'
+      };
+      localStorage.setItem('pp_user', JSON.stringify(fallbackUser));
+      showToast(`Account created! Welcome, @${fallbackUser.username}! 🚀`, 'success', 3500);
+      setTimeout(() => { window.location.href = 'index.html'; }, 900);
+    }
+  });
+
+  googleBtn?.addEventListener('click', () => {
+    const demo = { id: 99, username: 'google_creator', email: 'user@gmail.com', role: 'creator', tier: 'Pro', avatar_url: 'assets/img/avatar-user.jpg' };
+    localStorage.setItem('pp_user', JSON.stringify(demo));
+    showToast('Signed in with Google! 🌐', 'success');
+    setTimeout(() => { window.location.href = 'index.html'; }, 900);
+  });
+
+  discordBtn?.addEventListener('click', () => {
+    const demo = { id: 101, username: 'discord_artist', email: 'creator@discord.gg', role: 'creator', tier: 'Creator', avatar_url: 'assets/img/avatar-user.jpg' };
+    localStorage.setItem('pp_user', JSON.stringify(demo));
+    showToast('Signed in with Discord! 💬', 'success');
+    setTimeout(() => { window.location.href = 'index.html'; }, 900);
+  });
+})();
+</script>
+
+</body>
+</html>

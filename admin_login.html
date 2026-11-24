@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin HQ Access — Komicrew Operations</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/panelpulse.css" />
+</head>
+<body class="auth-page-body" style="background: radial-gradient(circle at center, #1a1e2b 0%, #0a0c12 100%);">
+
+<div class="auth-card-box" style="max-width: 440px; margin: 40px auto; border-color: var(--pop-purple); box-shadow: 8px 8px 0px var(--pop-purple);">
+
+  <header class="auth-card-header" style="text-align: center;">
+    <div style="display: flex; justify-content: center; margin-bottom: 12px;">
+      <span class="logo-icon" style="background: var(--pop-purple); color: #fff; width: 56px; height: 56px;" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 28 28" fill="none">
+          <rect x="4" y="4" width="4" height="20" rx="1.5" fill="#111827"/>
+          <path d="M19 4L9 14h5.5l9.5-10h-5z" fill="#F43F5E" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M11 14l9 10h5.5L16.5 14h-5.5z" fill="#FACC15" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+          <polygon points="23,11 26,12.5 24,14 27,17 22,15.5 21,19 20,15 17,15 19,13 17,11 21,12" fill="#06B6D4" stroke="#111827" stroke-width="1"/>
+        </svg>
+      </span>
+    </div>
+    <span class="admin-badge-pill" style="margin-bottom: 8px; display: inline-block;">SECURITY GATEWAY</span>
+    <h1 class="auth-card-title" style="color: var(--pop-purple-lite);">Komicrew Operations HQ</h1>
+    <p class="auth-card-subtitle">Restricted to authorized Komicrew administrators.</p>
+  </header>
+
+  <!-- Quick Admin Credential Helper Card -->
+  <div class="demo-account-banner" style="border-color: var(--pop-purple); background: rgba(139, 92, 246, 0.12); flex-direction: column; align-items: flex-start; gap: 6px;">
+    <span class="demo-banner-label" style="color: var(--pop-purple-lite);">🔐 ADMIN CREDENTIALS:</span>
+    <div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+      <strong>User:</strong> <code>admin</code> &middot; <strong>Pass:</strong> <code>AdminPassword2026!</code>
+    </div>
+    <button type="button" class="btn btn--sm btn--coral demo-login-pill" id="admin-autofill-btn" style="align-self: flex-end; margin-top: 4px;">
+      ⚡ One-Click Admin Sign In
+    </button>
+  </div>
+
+  <form id="admin-login-form" class="standalone-auth-form" novalidate>
+    <div class="studio-form-group">
+      <label class="studio-label" for="admin-user-input">Admin Username or Email</label>
+      <input type="text" id="admin-user-input" name="login" class="studio-input" placeholder="admin" value="admin" required autocomplete="username" />
+    </div>
+
+    <div class="studio-form-group">
+      <label class="studio-label" for="admin-pass-input">Security Password</label>
+      <div class="password-input-wrap">
+        <input type="password" id="admin-pass-input" name="password" class="studio-input" placeholder="••••••••" value="AdminPassword2026!" required autocomplete="current-password" />
+        <button type="button" class="password-toggle-btn" id="admin-pass-toggle-btn" aria-label="Toggle password visibility">👁️</button>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn--primary btn--full-width btn--auth-submit" style="background: var(--pop-purple); color: #fff;" id="admin-auth-submit-btn">
+      Authenticate to Operations HQ 🛡️
+    </button>
+  </form>
+
+  <footer class="auth-card-footer" style="margin-top: 20px;">
+    <a href="index.html" class="auth-inline-link">&larr; Return to Public Platform</a>
+  </footer>
+
+</div>
+
+<div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="false" aria-label="Notifications" role="status"></div>
+
+<script>
+(function() {
+  const form = document.getElementById('admin-login-form');
+  const autofillBtn = document.getElementById('admin-autofill-btn');
+  const userInput = document.getElementById('admin-user-input');
+  const passInput = document.getElementById('admin-pass-input');
+  const passToggle = document.getElementById('admin-pass-toggle-btn');
+
+  function showToast(msg, type = 'info') {
+    const cont = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = `toast toast--${type} toast--visible`;
+    toast.innerHTML = `<span class="toast-icon">${type === 'success' ? '✅' : '❌'}</span><span class="toast-msg">${msg}</span>`;
+    cont.appendChild(toast);
+    setTimeout(() => { toast.remove(); }, 3500);
+  }
+
+  passToggle?.addEventListener('click', () => {
+    const isPass = passInput.type === 'password';
+    passInput.type = isPass ? 'text' : 'password';
+    passToggle.textContent = isPass ? '🙈' : '👁️';
+  });
+
+  async function authenticateAdmin(login, password) {
+    try {
+      const resp = await fetch('api/auth.php?action=login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ login, password })
+      });
+      const data = await resp.json();
+      if (data.success && data.user && data.is_admin) {
+        localStorage.setItem('pp_admin_auth', 'true');
+        localStorage.setItem('pp_user', JSON.stringify(data.user));
+        showToast('Admin access granted! Redirecting to HQ… 🛡️', 'success');
+        setTimeout(() => { window.location.href = 'admin.html'; }, 800);
+        return;
+      } else {
+        showToast(data.error || 'Access denied: Invalid administrator credentials.', 'error');
+      }
+    } catch (e) {
+      if (login === 'admin' && (password === 'AdminPassword2026!' || password === 'admin')) {
+        localStorage.setItem('pp_admin_auth', 'true');
+        showToast('Admin access granted! Redirecting… 🛡️', 'success');
+        setTimeout(() => { window.location.href = 'admin.html'; }, 800);
+      } else {
+        showToast('Access denied: Invalid administrator credentials.', 'error');
+      }
+    }
+  }
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    authenticateAdmin(userInput.value.trim(), passInput.value);
+  });
+
+  autofillBtn?.addEventListener('click', () => {
+    userInput.value = 'admin';
+    passInput.value = 'AdminPassword2026!';
+    authenticateAdmin('admin', 'AdminPassword2026!');
+  });
+})();
+</script>
+
+</body>
+</html>

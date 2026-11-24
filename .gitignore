@@ -1,0 +1,22 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Database files & transient data
+data/comicsense.sqlite
+data/comicsense.sqlite-journal
+data/comicsense.sqlite-shm
+data/comicsense.sqlite-wal
+
+# Temporary / Log files
+*.log
+/tmp/
+
+# Uploads directory (keep directory, ignore uploaded contents)
+data/uploads/*
+!data/uploads/.gitkeep

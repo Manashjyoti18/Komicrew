@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-active-view="landing">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Komicrew — AI Comic Studio &amp; Trending Web Comic Reader</title>
+  <meta name="description" content="Komicrew is the ultimate hybrid platform: read trending web comics across every genre and generate stunning AI-powered comic strips from your scripts. Create, read, remix." />
+  <meta name="keywords" content="web comics, AI comic generator, script to comic, manga reader, webtoon, shonen, seinen, romance, isekai, cyberpunk, comic studio, Komicrew" />
+  <meta name="author" content="Komicrew" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://komicrew.app" />
+
+  <meta property="og:title" content="Komicrew — AI Script-to-Comic Studio" />
+  <meta property="og:description" content="Transform your scripts into vivid comic panels with AI. Read, create, and remix web comics." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://komicrew.app" />
+  <meta property="og:image" content="/assets/og-cover.png" />
+  <meta property="og:site_name" content="Komicrew" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@KomicrewApp" />
+  <meta name="twitter:title" content="Komicrew — AI Comic Studio" />
+  <meta name="twitter:description" content="Create and read AI-powered web comics on Komicrew." />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://api.komicrew.app" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="assets/css/panelpulse.css" />
+</head>
+
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- ═══════════════════════════════════════════════════════
+     GLOBAL HEADER & MEGA-MENU NAVIGATION
+═══════════════════════════════════════════════════════ -->
+<header id="global-header" role="banner">
+  <div class="nav-wrapper">
+    <nav id="primary-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+
+        <!-- Brand -->
+        <a href="#" id="nav-brand" class="brand-logo" aria-label="Komicrew Home" data-view-target="landing">
+          <span class="logo-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <!-- Geometric Komicrew Icon with Action Slash -->
+              <rect x="4" y="4" width="4" height="20" rx="1.5" fill="#111827"/>
+              <path d="M19 4L9 14h5.5l9.5-10h-5z" fill="#F43F5E" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M11 14l9 10h5.5L16.5 14h-5.5z" fill="#8B5CF6" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+              <polygon points="23,11 26,12.5 24,14 27,17 22,15.5 21,19 20,15 17,15 19,13 17,11 21,12" fill="#06B6D4" stroke="#111827" stroke-width="1"/>
+            </svg>
+          </span>
+          <span class="logo-wordmark"><span class="logo-komi">Komi</span><span class="logo-crew">crew</span></span>
+          <span class="logo-tagline" aria-hidden="true">Read. Create. Remix.</span>
+        </a>
+
+        <!-- Primary Nav Links -->
+        <ul class="primary-nav-links" role="list" aria-label="Site sections">
+
+          <!-- CATEGORIES -->
+          <li class="nav-item nav-item--has-dropdown">
+            <button class="nav-link nav-dropdown-trigger" id="trigger-categories" aria-expanded="false" aria-controls="dropdown-categories" aria-haspopup="true">
+              <span>Categories</span>
+              <svg class="nav-chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div id="dropdown-categories" class="mega-dropdown" role="region" aria-labelledby="trigger-categories" hidden>
+              <div class="mega-dropdown-inner">
+                <div class="mega-col">
+                  <p class="mega-col-heading">Story Type</p>
+                  <ul role="list">
+                    <li><a href="#" class="mega-link" data-view-target="browse" data-filter-category="shonen"><span class="mega-link-icon" aria-hidden="true">&#x2694;&#xFE0F;</span><span class="mega-link-body"><strong>Shonen</strong><span>Action, friendship &amp; growth</span></span></a></li>
+                    <li><a href="#" class="mega-link" data-view-target="browse" data-filter-category="seinen"><span class="mega-link-icon" aria-hidden="true">&#x1F3AD;</span><span class="mega-link-body"><strong>Seinen</strong><span>Dark, mature &amp; complex</span></span></a></li>
+                    <li><a href="#" class="mega-link" data-view-target="browse" data-filter-category="romance"><span class="mega-link-icon" aria-hidden="true">&#x1F495;</span><span class="mega-link-body"><strong>Romance</strong><span>Love stories &amp; drama</span></span></a></li>
+                    <li><a href="#" class="mega-link" data-view-target="browse" data-filter-category="isekai"><span class="mega-link-icon" aria-hidden="true">&#x1F300;</span><span class="mega-link-body"><strong>Isekai</strong><span>Otherworld adventures</span></span></a></li>
+                    <li><a href="#" class="mega-link" data-view-target="browse" data-filter-category="webtoon-originals"><span class="mega-link-icon" aria-hidden="true">&#x1F310;</span><span class="mega-link-body"><strong>Webtoon Originals</strong><span>Exclusive vertical-scroll series</span></span></a></li>
+                    <li><a href="#" class="mega-link" data-view-target="browse" data-filter-category="slice-of-life"><span class="mega-link-icon" aria-hidden="true">&#x2615;</span><span class="mega-link-body"><strong>Slice of Life</strong><span>Everyday moments &amp; warmth</span></span></a></li>
+                  </ul>
+                </div>
+                <div class="mega-col mega-col--featured">
+                  <p class="mega-col-heading">Featured Spotlight</p>
+                  <article class="mega-featured-card" aria-label="Featured: Amazing Fantasy #15: Spider-Man!">
+                    <figure class="mega-featured-thumb"><img src="assets/img/cover-amazing-fantasy-15.jpg" alt="Featured comic cover" width="160" height="100" loading="lazy"/></figure>
+                    <div class="mega-featured-body">
+                      <span class="mega-featured-badge">Featured</span>
+                      <h3 class="mega-featured-title">Amazing Fantasy #15</h3>
+                      <p class="mega-featured-meta">Superheroes &middot; Ch. 1 &middot; @StanLee_SteveDitko</p>
+                      <a href="#" class="mega-featured-cta" data-view-target="reader" data-comic-id="amazing-fantasy-15">Read Now &rarr;</a>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- GENRES -->
+          <li class="nav-item nav-item--has-dropdown">
+            <button class="nav-link nav-dropdown-trigger" id="trigger-genres" aria-expanded="false" aria-controls="dropdown-genres" aria-haspopup="true">
+              <span>Genres</span>
+              <svg class="nav-chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div id="dropdown-genres" class="mega-dropdown mega-dropdown--genres" role="region" aria-labelledby="trigger-genres" hidden>
+              <div class="mega-dropdown-inner">
+                <div class="mega-col">
+                  <p class="mega-col-heading">Browse by Genre</p>
+                  <ul class="genre-grid-list" role="list">
+                    <li><a href="#" class="genre-pill-link" data-view-target="browse" data-filter-genre="action"><span class="genre-emoji" aria-hidden="true">&#x1F4A5;</span> Action</a></li>
+                    <li><a href="#" class="genre-pill-link" data-view-target="browse" data-filter-genre="cyberpunk"><span class="genre-emoji" aria-hidden="true">&#x1F916;</span> Cyberpunk</a></li>
+                    <li><a href="#" class="genre-pill-link" data-view-target="browse" data-filter-genre="fantasy"><span class="genre-emoji" aria-hidden="true">&#x1F409;</span> Fantasy</a></li>
+                    <li><a href="#" class="genre-pill-link" data-view-target="browse" data-filter-genre="horror"><span class="genre-emoji" aria-hidden="true">&#x1F441;&#xFE0F;</span> Horror</a></li>
+                    <li><a href="#" class="genre-pill-link" data-view-target="browse" data-filter-genre="comedy"><span class="genre-emoji" aria-hidden="true">&#x1F602;</span> Comedy</a></li>
+                    <li><a href="#" class="genre-pill-link" data-view-target="browse" data-filter-genre="mystery"><span class="genre-emoji" aria-hidden="true">&#x1F50D;</span> Mystery</a></li>
+                    <li><a href="#" class="genre-pill-link" data-view-target="browse" data-filter-genre="sci-fi"><span class="genre-emoji" aria-hidden="true">&#x1F680;</span> Sci-Fi</a></li>
+                    <li><a href="#" class="genre-pill-link" data-view-target="browse" data-filter-genre="thriller"><span class="genre-emoji" aria-hidden="true">&#x26A1;</span> Thriller</a></li>
+                    <li><a href="#" class="genre-pill-link" data-view-target="browse" data-filter-genre="sports"><span class="genre-emoji" aria-hidden="true">&#x1F3C6;</span> Sports</a></li>
+                    <li><a href="#" class="genre-pill-link" data-view-target="browse" data-filter-genre="supernatural"><span class="genre-emoji" aria-hidden="true">&#x1F47B;</span> Supernatural</a></li>
+                    <li><a href="#" class="genre-pill-link" data-view-target="browse" data-filter-genre="mecha"><span class="genre-emoji" aria-hidden="true">&#x1F9BE;</span> Mecha</a></li>
+                    <li><a href="#" class="genre-pill-link" data-view-target="browse" data-filter-genre="historical"><span class="genre-emoji" aria-hidden="true">&#x1F4DC;</span> Historical</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- ART STYLES -->
+          <li class="nav-item nav-item--has-dropdown">
+            <button class="nav-link nav-dropdown-trigger" id="trigger-styles" aria-expanded="false" aria-controls="dropdown-styles" aria-haspopup="true">
+              <span>Art Styles</span>
+              <svg class="nav-chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div id="dropdown-styles" class="mega-dropdown" role="region" aria-labelledby="trigger-styles" hidden>
+              <div class="mega-dropdown-inner">
+                <div class="mega-col">
+                  <p class="mega-col-heading">Visual Style</p>
+                  <ul class="style-showcase-list" role="list">
+                    <li><a href="#" class="style-showcase-link" data-view-target="browse" data-filter-style="90s-anime"><span class="style-preview style-preview--90s-anime" aria-hidden="true"></span><span class="style-info"><strong>90s Anime</strong><span>Bold lines, cel shading, nostalgic palette</span></span></a></li>
+                    <li><a href="#" class="style-showcase-link" data-view-target="browse" data-filter-style="tactile-neo-comic"><span class="style-preview style-preview--neo-comic" aria-hidden="true"></span><span class="style-info"><strong>Tactile Neo-Comic</strong><span>Claymorphism &middot; Risograph &middot; Halftone</span></span></a></li>
+                    <li><a href="#" class="style-showcase-link" data-view-target="browse" data-filter-style="noir-ink"><span class="style-preview style-preview--noir" aria-hidden="true"></span><span class="style-info"><strong>Noir Ink</strong><span>High-contrast B&amp;W, dramatic shadows</span></span></a></li>
+                    <li><a href="#" class="style-showcase-link" data-view-target="browse" data-filter-style="watercolor"><span class="style-preview style-preview--watercolor" aria-hidden="true"></span><span class="style-info"><strong>Watercolor</strong><span>Soft washes, loose ink, organic feel</span></span></a></li>
+                    <li><a href="#" class="style-showcase-link" data-view-target="browse" data-filter-style="chibi"><span class="style-preview style-preview--chibi" aria-hidden="true"></span><span class="style-info"><strong>Chibi</strong><span>Oversized heads, cute proportions</span></span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- AI STUDIO -->
+          <li class="nav-item">
+            <a href="#" class="nav-link nav-link--studio" data-view-target="studio" aria-label="Open AI Script-to-Comic Studio">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1L10 6H15L11 9.5L12.5 15L8 11.5L3.5 15L5 9.5L1 6H6L8 1Z" fill="currentColor" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              <span>AI Studio</span>
+              <span class="nav-badge nav-badge--new" aria-label="New feature">NEW</span>
+            </a>
+          </li>
+
+
+
+        </ul>
+
+        <!-- Quick Actions -->
+        <div class="nav-quick-actions" role="group" aria-label="Quick actions">
+          <div class="nav-search-bar" role="search" aria-label="Search comics">
+            <button class="nav-search-trigger" id="search-trigger" aria-expanded="false" aria-controls="search-overlay" aria-label="Open search">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="2"/><path d="M13 13l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span class="search-trigger-label">Search</span>
+              <kbd class="search-kbd" aria-label="Command K">&#x2318;K</kbd>
+            </button>
+          </div>
+          <a href="#" class="btn btn--primary btn--create-cta" id="nav-create-btn" data-view-target="studio" aria-label="Create a comic">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            <span>Create</span>
+          </a>
+          <button class="nav-icon-btn" id="bookmarks-trigger" aria-label="Open bookmarks" aria-expanded="false" aria-controls="bookmarks-panel">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 2h10a1 1 0 011 1v13l-6-4-6 4V3a1 1 0 011-1z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span class="sr-only">Bookmarks</span>
+            <span class="nav-badge-dot" aria-hidden="true"></span>
+          </button>
+          <button class="nav-icon-btn" id="notifications-trigger" aria-label="Notifications, 3 unread" aria-expanded="false" aria-controls="notifications-panel">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 1.5a5.5 5.5 0 00-5.5 5.5v3.5L2 12.5h14l-1.5-2V7A5.5 5.5 0 009 1.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M7 14.5a2 2 0 004 0" stroke="currentColor" stroke-width="2"/></svg>
+            <span class="sr-only">Notifications</span>
+            <span class="notification-badge" aria-label="3 unread">3</span>
+          </button>
+          <button class="nav-icon-btn" id="theme-toggle" aria-label="Toggle light/dark mode" aria-pressed="false">
+            <svg class="theme-icon theme-icon--moon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M15.5 11A7 7 0 017 2.5a7 7 0 100 13 7 7 0 008.5-4.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg class="theme-icon theme-icon--sun" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="4" stroke="currentColor" stroke-width="2"/><path d="M9 1v2M9 15v2M1 9h2M15 9h2M3.2 3.2l1.4 1.4M13.4 13.4l1.4 1.4M3.2 14.8l1.4-1.4M13.4 4.6l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <!-- Guest Auth Buttons (Logged Out State) -->
+          <div class="nav-guest-actions" id="nav-auth-guest" hidden>
+            <a href="login.html" class="btn btn--ghost btn--sm" id="nav-login-btn">Sign In</a>
+            <a href="signup.html" class="btn btn--primary btn--sm" id="nav-signup-btn">Join Free</a>
+          </div>
+
+          <!-- Authenticated User Pill (Logged In State) -->
+          <div class="user-profile-pill-wrapper" id="nav-auth-user" style="position:relative;">
+            <button class="user-profile-pill" id="profile-trigger" aria-expanded="false" aria-controls="profile-dropdown" aria-label="User profile menu">
+              <span class="profile-avatar"><img src="assets/img/avatar-user.jpg" alt="user avatar" width="32" height="32" id="header-user-avatar" loading="lazy"/></span>
+              <span class="profile-username" id="header-user-name">Account</span>
+              <span class="profile-tier-badge" id="header-user-tier" aria-label="Creator tier">Creator</span>
+              <svg class="profile-chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <ul id="profile-dropdown" class="profile-dropdown-menu" role="menu" aria-labelledby="profile-trigger" hidden>
+              <li role="none"><a href="#" role="menuitem" class="profile-menu-item" id="menu-user-profile">My Profile</a></li>
+              <li role="none"><a href="#" role="menuitem" class="profile-menu-item" data-view-target="studio">My Studio Comics</a></li>
+              <li role="none"><a href="#" role="menuitem" class="profile-menu-item" id="menu-user-bookmarks">My Bookmarks</a></li>
+              <li role="none" id="menu-admin-item" hidden><a href="admin.html" role="menuitem" class="profile-menu-item" style="color: var(--pop-purple-lite); font-weight: 700;">🛡️ Operations HQ</a></li>
+              <li role="separator" class="menu-divider"></li>
+              <li role="none"><a href="#" role="menuitem" class="profile-menu-item profile-menu-item--plan">Upgrade to Pro <span class="menu-badge menu-badge--pro">PRO</span></a></li>
+              <li role="separator" class="menu-divider"></li>
+              <li role="none"><a href="#" role="menuitem" class="profile-menu-item profile-menu-item--danger" id="nav-logout-btn">Sign Out</a></li>
+            </ul>
+          </div>
+          <button class="mobile-menu-btn" id="mobile-menu-trigger" aria-expanded="false" aria-controls="mobile-nav-drawer" aria-label="Open mobile navigation">
+            <span class="hamburger-bar" aria-hidden="true"></span>
+            <span class="hamburger-bar" aria-hidden="true"></span>
+            <span class="hamburger-bar" aria-hidden="true"></span>
+          </button>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- Mobile Nav Drawer -->
+    <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile navigation" hidden>
+      <nav aria-label="Mobile menu">
+        <ul class="mobile-nav-list" role="list">
+          <li><a href="#" class="mobile-nav-link" data-view-target="landing">&#x1F3E0; Discover</a></li>
+          <li>
+            <details class="mobile-nav-details">
+              <summary class="mobile-nav-link">&#x2694;&#xFE0F; Categories</summary>
+              <ul class="mobile-nav-submenu" role="list">
+                <li><a href="#" data-view-target="browse" data-filter-category="shonen">Shonen</a></li>
+                <li><a href="#" data-view-target="browse" data-filter-category="seinen">Seinen</a></li>
+                <li><a href="#" data-view-target="browse" data-filter-category="romance">Romance</a></li>
+                <li><a href="#" data-view-target="browse" data-filter-category="isekai">Isekai</a></li>
+                <li><a href="#" data-view-target="browse" data-filter-category="webtoon-originals">Webtoon Originals</a></li>
+                <li><a href="#" data-view-target="browse" data-filter-category="slice-of-life">Slice of Life</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="mobile-nav-details">
+              <summary class="mobile-nav-link">&#x1F3A8; Genres</summary>
+              <ul class="mobile-nav-submenu" role="list">
+                <li><a href="#" data-view-target="browse" data-filter-genre="action">Action</a></li>
+                <li><a href="#" data-view-target="browse" data-filter-genre="cyberpunk">Cyberpunk</a></li>
+                <li><a href="#" data-view-target="browse" data-filter-genre="fantasy">Fantasy</a></li>
+                <li><a href="#" data-view-target="browse" data-filter-genre="horror">Horror</a></li>
+                <li><a href="#" data-view-target="browse" data-filter-genre="comedy">Comedy</a></li>
+                <li><a href="#" data-view-target="browse" data-filter-genre="mystery">Mystery</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="#" class="mobile-nav-link" data-view-target="studio">&#x2728; AI Studio</a></li>
+
+          <li><a href="#" class="mobile-nav-link">&#x1F516; Bookmarks</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════
+     MAIN CONTENT — 4-VIEW SPA CONTAINER
+═══════════════════════════════════════════════════════ -->
+<main id="main-content" aria-label="Main content">
+
+
+<!-- ╔═══════════════════════════════════════════════════╗
+     VIEW 1 — LANDING / DISCOVERY FEED
+╚═══════════════════════════════════════════════════╝ -->
+<section id="view-landing" class="app-view app-view--landing" aria-label="Discovery feed" data-view="landing" aria-hidden="false">
+
+  <!-- ─── HERO SECTION (DYNAMICALLY DB-DRIVEN) ─── -->
+  <section id="hero" class="hero-section" aria-labelledby="hero-heading">
+    <div id="hero-dynamic-container">
+      <!-- ─── JUMP BACK IN / RESUME READING BANNER ─── -->
+      <div id="reading-resume-banner" class="reading-resume-banner" role="region" aria-label="Continue Reading" hidden>
+        <div class="resume-banner-left">
+          <img id="resume-banner-thumb" class="resume-banner-thumb" src="assets/img/cover-placeholder.png" alt="Last read comic cover" />
+          <div class="resume-banner-text">
+            <span class="resume-banner-tag">⚡ Pick Up Where You Left Off</span>
+            <h3 id="resume-banner-title" class="resume-banner-title">Title &middot; Ch. 1 &middot; Page 1</h3>
+          </div>
+        </div>
+        <div class="resume-banner-actions">
+          <button type="button" id="resume-banner-btn" class="btn btn--primary btn--sm">Resume &rarr;</button>
+          <button type="button" id="resume-banner-dismiss" class="btn btn--ghost btn--sm" aria-label="Dismiss banner" style="padding: 4px 8px;">✕</button>
+        </div>
+      </div>
+
+      <article class="hero-comic-feature" id="hero-feature-card" aria-label="Featured Spotlight" data-comic-id="amazing-fantasy-15">
+        <figure class="hero-backdrop" id="hero-backdrop-figure" aria-hidden="true">
+          <img id="hero-backdrop-img" src="assets/img/cover-amazing-fantasy-15.jpg" alt="Amazing Fantasy #15: Spider-Man!" width="1440" height="680" loading="eager" style="display:block;"/>
+          <div class="hero-backdrop-overlay" aria-hidden="true" style="background: linear-gradient(135deg, rgba(26,26,46,0.92), rgba(15,15,26,0.97));"></div>
+        </figure>
+
+        <div class="hero-content">
+          <div class="hero-rank-group" aria-label="Trending rank">
+            <span class="hero-rank-label" id="hero-rank-badge" aria-hidden="true">#1</span>
+            <span class="hero-trend-tag">
+              <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 8L5 3 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+              Trending &middot; Vintage Marvel
+            </span>
+          </div>
+
+          <div class="hero-identity">
+            <span class="hero-genre-tag" id="hero-genre-tag">Superheroes &middot; Action</span>
+            <span class="hero-ai-badge" id="hero-ai-badge" style="background: #e23636; color: #fff;">
+              Official Marvel 1962
+            </span>
+          </div>
+
+          <h1 id="hero-heading" class="hero-title">Amazing Fantasy #15: Spider-Man!</h1>
+
+          <p class="hero-synopsis" id="hero-synopsis">Introducing the amazing Spider-Man! High school student Peter Parker is bitten by a radioactive spider, gaining superhuman agility and wall-crawling power. When tragedy strikes Uncle Ben, Peter learns the eternal lesson: With great power comes great responsibility.</p>
+
+          <address class="hero-creator-credit" id="hero-creator-credit" aria-label="Creator info">
+            <img class="hero-creator-avatar" id="hero-creator-avatar" src="assets/img/avatar-user.jpg" alt="Creator" width="28" height="28" loading="lazy"/>
+            <span>by </span><a href="#" class="hero-creator-name" id="hero-creator-name" rel="author">@StanLee_SteveDitko</a>
+            <span class="hero-meta-separator" aria-hidden="true">&middot;</span>
+            <span class="hero-chapter-info" id="hero-chapter-info"><strong>1 Chapter (39 Pages)</strong></span>
+          </address>
+
+          <div class="hero-stats" id="hero-stats-group" aria-label="Comic statistics">
+            <div class="hero-stat" id="hero-stat-rating" aria-label="Rating 5.0"><svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M7 1L8.8 5H13L9.6 7.5L10.9 12L7 9.5L3.1 12L4.4 7.5L1 5H5.2L7 1z"/></svg><span id="hero-rating-val">5.0</span></div>
+            <div class="hero-stat" id="hero-stat-views" aria-label="Views"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7c0 0 2.5-5 6-5s6 5 6 5-2.5 5-6 5-6-5-6-5z" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="7" r="2" stroke="currentColor" stroke-width="1.5"/></svg><span id="hero-views-val">48,502 views</span></div>
+            <div class="hero-stat"><span class="hero-status-pill" id="hero-status-pill">Featured</span></div>
+          </div>
+
+          <div class="hero-ctas" role="group" aria-label="Actions">
+            <a href="#" class="btn btn--hero-primary" id="hero-read-btn" data-view-target="reader" data-comic-id="amazing-fantasy-15" data-chapter="1">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 2h12v12H2V2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M5 5h6M5 8h4M5 11h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Read Now
+            </a>
+            <a href="#" class="btn btn--hero-secondary" id="hero-remix-btn" data-view-target="studio" data-remix-comic="amazing-fantasy-15">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M8 4h4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Open Studio
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-secondary-picks" id="hero-secondary-aside" aria-label="Also trending">
+          <p class="hero-secondary-heading" aria-hidden="true">Trending Releases</p>
+          <ol class="hero-secondary-list" id="hero-secondary-list" role="list">
+            <li>
+              <a href="#" class="hero-secondary-card" data-view-target="reader" data-comic-id="marvel-comics-1" aria-label="Marvel Comics #1 (1939)">
+                <figure class="hero-secondary-thumb">
+                  <img src="assets/img/cover-marvel-comics-1.jpg" alt="Marvel Comics #1 cover" width="60" height="80" loading="lazy"/>
+                  <span class="hero-secondary-rank" aria-hidden="true">#2</span>
+                </figure>
+                <div class="hero-secondary-info">
+                  <strong>Marvel Comics #1 (1939)</strong>
+                  <span>Sci-Fi &middot; Classic</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="hero-secondary-card" data-view-target="reader" data-comic-id="captain-america-13" aria-label="Captain America Comics #13 (1942)">
+                <figure class="hero-secondary-thumb">
+                  <img src="assets/img/cover-captain-america-13.jpg" alt="Captain America Comics #13 cover" width="60" height="80" loading="lazy"/>
+                  <span class="hero-secondary-rank" aria-hidden="true">#3</span>
+                </figure>
+                <div class="hero-secondary-info">
+                  <strong>Captain America Comics #13</strong>
+                  <span>Action &middot; Golden Age</span>
+                </div>
+              </a>
+            </li>
+          </ol>
+        </aside>
+
+      </article>
+    </div>
+    <div class="hero-scroll-cue" aria-hidden="true">
+      <span>Scroll to discover</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </section>
+
+  <!-- ─── GENRE & STYLE FILTER BAR ─── -->
+  <section id="discovery-filter-bar" class="discovery-filter-bar" aria-label="Filter by genre or style">
+    <div class="filter-bar-inner">
+      <div class="filter-tabs-scroll-wrapper" role="tablist" aria-label="Genre filters">
+        <button class="filter-tab filter-tab--active" role="tab" id="filter-tab-all" aria-selected="true" aria-controls="top-picks-grid" data-filter="all">All</button>
+        <button class="filter-tab" role="tab" id="filter-tab-trending" aria-selected="false" aria-controls="top-picks-grid" data-filter="trending">&#x1F525; Trending Now</button>
+        <button class="filter-tab" role="tab" id="filter-tab-action" aria-selected="false" aria-controls="top-picks-grid" data-filter="action">&#x1F4A5; Action</button>
+        <button class="filter-tab" role="tab" id="filter-tab-cyberpunk" aria-selected="false" aria-controls="top-picks-grid" data-filter="cyberpunk">&#x1F916; Cyberpunk</button>
+        <button class="filter-tab" role="tab" id="filter-tab-romance" aria-selected="false" aria-controls="top-picks-grid" data-filter="romance">&#x1F495; Romance</button>
+        <button class="filter-tab" role="tab" id="filter-tab-fantasy" aria-selected="false" aria-controls="top-picks-grid" data-filter="fantasy">&#x1F409; Fantasy</button>
+        <button class="filter-tab" role="tab" id="filter-tab-horror" aria-selected="false" aria-controls="top-picks-grid" data-filter="horror">&#x1F441;&#xFE0F; Horror</button>
+        <button class="filter-tab" role="tab" id="filter-tab-comedy" aria-selected="false" aria-controls="top-picks-grid" data-filter="comedy">&#x1F602; Comedy</button>
+        <button class="filter-tab" role="tab" id="filter-tab-mystery" aria-selected="false" aria-controls="top-picks-grid" data-filter="mystery">&#x1F50D; Mystery</button>
+        <button class="filter-tab" role="tab" id="filter-tab-ai-made" aria-selected="false" aria-controls="top-picks-grid" data-filter="ai-made">&#x2728; AI-Made</button>
+        <button class="filter-tab" role="tab" id="filter-tab-new" aria-selected="false" aria-controls="top-picks-grid" data-filter="new">&#x1F195; New This Week</button>
+      </div>
+      <div class="filter-bar-sort">
+        <label for="sort-select" class="filter-sort-label">Sort:</label>
+        <select id="sort-select" class="select-input select-input--compact" aria-label="Sort comics by">
+          <option value="trending">Trending</option>
+          <option value="rating">Top Rated</option>
+          <option value="views">Most Viewed</option>
+          <option value="newest">Newest</option>
+          <option value="updated">Recently Updated</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TOP PICKS GRID ─── -->
+  <section id="top-picks" class="top-picks-section landing-section" aria-labelledby="top-picks-heading" tabindex="-1">
+    <div class="landing-section-header">
+      <div class="landing-section-title-group">
+        <h2 id="top-picks-heading" class="landing-section-title"><span class="section-title-icon" aria-hidden="true">&#x1F3C6;</span> Top Picks</h2>
+        <p class="landing-section-subtitle">Real-time comics catalog &mdash; curated by the community and creator studio.</p>
+      </div>
+      <a href="#" class="section-see-all-link" data-view-target="browse" aria-label="Browse all">Browse All <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+
+    <ol id="top-picks-grid" class="comic-grid" role="list" aria-label="Top picks" aria-live="polite">
+      <li class="comic-card-wrapper">
+        <article class="comic-card" data-comic-id="amazing-fantasy-15" data-genres="Action" data-category="Superheroes" data-ai="false">
+          <a href="#" class="comic-card-link" data-view-target="reader" data-comic-id="amazing-fantasy-15" tabindex="-1" aria-hidden="true">
+            <figure class="comic-card-cover">
+              <img src="assets/img/cover-amazing-fantasy-15.jpg" alt="Amazing Fantasy #15: Spider-Man! cover" width="260" height="340" loading="eager"/>
+              <div class="comic-card-cover-overlay" aria-hidden="true">
+                <span class="card-rank-badge">#1</span>
+                <div class="card-quick-read-btn">Read</div>
+              </div>
+            </figure>
+          </a>
+          <div class="comic-card-body">
+            <div class="comic-card-tags">
+              <span class="comic-tag comic-tag--action">Action</span>
+              <span class="comic-tag">Superheroes</span>
+            </div>
+            <h3 class="comic-card-title"><a href="#" data-view-target="reader" data-comic-id="amazing-fantasy-15">Amazing Fantasy #15: Spider-Man!</a></h3>
+            <address class="comic-card-creator"><a href="#" rel="author">@StanLee_SteveDitko</a></address>
+            <p class="comic-card-synopsis">Introducing the amazing Spider-Man! High school student Peter Parker is bitten by a radioactive spider, gaining superhuman agility and wall-crawling power.</p>
+            <footer class="comic-card-footer">
+              <div class="comic-card-stats">
+                <span class="comic-stat" aria-label="Rating 5.0"><svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M6 1L7.5 4.5H11L8 6.5L9.2 10.5L6 8.5L2.8 10.5L4 6.5L1 4.5H4.5L6 1z"/></svg> 5.0</span>
+                <span class="comic-stat" aria-label="48,502 views">👁️ 48,502</span>
+                <span class="comic-stat comic-stat--chapters">1 Ch. (39 Pgs)</span>
+              </div>
+              <div class="comic-card-actions">
+                <button class="card-action-btn bookmark-btn" aria-label="Bookmark Amazing Fantasy #15: Spider-Man!" aria-pressed="false"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 2h8a1 1 0 011 1v9l-5-3-5 3V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></button>
+                <a href="#" class="card-action-btn card-remix-btn" data-view-target="studio" data-remix-comic="amazing-fantasy-15" aria-label="Remix in AI Studio"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M7 3h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              </div>
+            </footer>
+          </div>
+        </article>
+      </li>
+      <li class="comic-card-wrapper">
+        <article class="comic-card" data-comic-id="marvel-comics-1" data-genres="Sci-Fi" data-category="Classic" data-ai="false">
+          <a href="#" class="comic-card-link" data-view-target="reader" data-comic-id="marvel-comics-1" tabindex="-1" aria-hidden="true">
+            <figure class="comic-card-cover">
+              <img src="assets/img/cover-marvel-comics-1.jpg" alt="Marvel Comics #1 (1939) cover" width="260" height="340" loading="lazy"/>
+              <div class="comic-card-cover-overlay" aria-hidden="true">
+                <span class="card-rank-badge">#2</span>
+                <div class="card-quick-read-btn">Read</div>
+              </div>
+            </figure>
+          </a>
+          <div class="comic-card-body">
+            <div class="comic-card-tags">
+              <span class="comic-tag comic-tag--scifi">Sci-Fi</span>
+              <span class="comic-tag">Classic</span>
+            </div>
+            <h3 class="comic-card-title"><a href="#" data-view-target="reader" data-comic-id="marvel-comics-1">Marvel Comics #1 (1939)</a></h3>
+            <address class="comic-card-creator"><a href="#" rel="author">@CarlBurgos_BillEverett</a></address>
+            <p class="comic-card-synopsis">The historic genesis of the entire Marvel Universe! Featuring the groundbreaking debuts of the Human Torch and Sub-Mariner (Prince Namor).</p>
+            <footer class="comic-card-footer">
+              <div class="comic-card-stats">
+                <span class="comic-stat" aria-label="Rating 5.0"><svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M6 1L7.5 4.5H11L8 6.5L9.2 10.5L6 8.5L2.8 10.5L4 6.5L1 4.5H4.5L6 1z"/></svg> 5.0</span>
+                <span class="comic-stat" aria-label="31,201 views">👁️ 31,201</span>
+                <span class="comic-stat comic-stat--chapters">1 Ch. (68 Pgs)</span>
+              </div>
+              <div class="comic-card-actions">
+                <button class="card-action-btn bookmark-btn" aria-label="Bookmark Marvel Comics #1" aria-pressed="false"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 2h8a1 1 0 011 1v9l-5-3-5 3V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></button>
+                <a href="#" class="card-action-btn card-remix-btn" data-view-target="studio" data-remix-comic="marvel-comics-1" aria-label="Remix in AI Studio"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M7 3h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              </div>
+            </footer>
+          </div>
+        </article>
+      </li>
+      <li class="comic-card-wrapper">
+        <article class="comic-card" data-comic-id="captain-america-13" data-genres="Action" data-category="Golden Age" data-ai="false">
+          <a href="#" class="comic-card-link" data-view-target="reader" data-comic-id="captain-america-13" tabindex="-1" aria-hidden="true">
+            <figure class="comic-card-cover">
+              <img src="assets/img/cover-captain-america-13.jpg" alt="Captain America Comics #13 (1942) cover" width="260" height="340" loading="lazy"/>
+              <div class="comic-card-cover-overlay" aria-hidden="true">
+                <span class="card-rank-badge">#3</span>
+                <div class="card-quick-read-btn">Read</div>
+              </div>
+            </figure>
+          </a>
+          <div class="comic-card-body">
+            <div class="comic-card-tags">
+              <span class="comic-tag comic-tag--action">Action</span>
+              <span class="comic-tag">Golden Age</span>
+            </div>
+            <h3 class="comic-card-title"><a href="#" data-view-target="reader" data-comic-id="captain-america-13">Captain America Comics #13 (1942)</a></h3>
+            <address class="comic-card-creator"><a href="#" rel="author">@JoeSimon_JackKirby</a></address>
+            <p class="comic-card-synopsis">Captain America and Bucky battle the secret League of the Unicorn and brave the eerie Lighthouse of Horror in classic World War II adventures.</p>
+            <footer class="comic-card-footer">
+              <div class="comic-card-stats">
+                <span class="comic-stat" aria-label="Rating 4.9"><svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M6 1L7.5 4.5H11L8 6.5L9.2 10.5L6 8.5L2.8 10.5L4 6.5L1 4.5H4.5L6 1z"/></svg> 4.9</span>
+                <span class="comic-stat" aria-label="21,901 views">👁️ 21,901</span>
+                <span class="comic-stat comic-stat--chapters">1 Ch. (68 Pgs)</span>
+              </div>
+              <div class="comic-card-actions">
+                <button class="card-action-btn bookmark-btn" aria-label="Bookmark Captain America Comics #13" aria-pressed="false"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 2h8a1 1 0 011 1v9l-5-3-5 3V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></button>
+                <a href="#" class="card-action-btn card-remix-btn" data-view-target="studio" data-remix-comic="captain-america-13" aria-label="Remix in AI Studio"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M7 3h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              </div>
+            </footer>
+          </div>
+        </article>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ─── AI STUDIO SPOTLIGHT ─── -->
+  <section id="ai-studio-spotlight" class="ai-spotlight-section landing-section" aria-labelledby="spotlight-heading">
+    <div class="landing-section-header">
+      <div class="landing-section-title-group">
+        <h2 id="spotlight-heading" class="landing-section-title"><span class="section-title-icon" aria-hidden="true">&#x2728;</span> Creator Spotlights</h2>
+        <p class="landing-section-subtitle">High-engagement published comics on Komicrew.</p>
+      </div>
+      <a href="#" class="section-see-all-link" data-view-target="browse" data-filter="ai-made">See All Comics <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <aside class="studio-callout-banner" aria-label="AI Studio promotion">
+      <div class="studio-callout-content">
+        <span class="studio-callout-icon" aria-hidden="true">&#x1F3AC;</span>
+        <div class="studio-callout-text"><strong>Turn your screenplay into a comic in minutes.</strong><span>Paste your script &rarr; Choose a style &rarr; Let AI do the rest.</span></div>
+      </div>
+      <a href="#" class="btn btn--primary" data-view-target="studio">Try AI Studio Free &rarr;</a>
+    </aside>
+    <div class="spotlight-scroll-wrapper" role="region" aria-label="Spotlight comics carousel">
+      <button class="spotlight-scroll-btn spotlight-scroll-btn--prev" aria-label="Scroll left" aria-controls="spotlight-list"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <ol id="spotlight-list" class="spotlight-comic-list" role="list" aria-label="Spotlight comics">
+        <li class="spotlight-card-wrapper">
+          <article class="spotlight-card" aria-label="Spotlight: Amazing Fantasy #15: Spider-Man!">
+            <figure class="spotlight-card-thumb"><img src="assets/img/cover-amazing-fantasy-15.jpg" alt="Amazing Fantasy #15" width="320" height="200" loading="lazy"/></figure>
+            <div class="spotlight-card-body">
+              <div class="spotlight-card-tags">
+                <span class="comic-tag">Original</span>
+                <span class="spotlight-genre-tag">Action</span>
+              </div>
+              <h3 class="spotlight-card-title"><a href="#" data-view-target="reader" data-comic-id="amazing-fantasy-15">Amazing Fantasy #15: Spider-Man!</a></h3>
+              <p class="spotlight-creator">by <a href="#" rel="author">@StanLee_SteveDitko</a></p>
+              <div class="spotlight-card-stats">
+                <span>❤️ 3,820</span>
+                <span>👁️ 48,502</span>
+                <span>🎨 Vintage Marvel</span>
+              </div>
+              <div class="spotlight-card-actions">
+                <a href="#" class="btn btn--sm" data-view-target="reader" data-comic-id="amazing-fantasy-15">Read</a>
+                <a href="#" class="btn btn--sm btn--remix" data-view-target="studio" data-remix-comic="amazing-fantasy-15">Remix Script</a>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="spotlight-card-wrapper">
+          <article class="spotlight-card" aria-label="Spotlight: Marvel Comics #1 (1939)">
+            <figure class="spotlight-card-thumb"><img src="assets/img/cover-marvel-comics-1.jpg" alt="Marvel Comics #1" width="320" height="200" loading="lazy"/></figure>
+            <div class="spotlight-card-body">
+              <div class="spotlight-card-tags">
+                <span class="comic-tag">Original</span>
+                <span class="spotlight-genre-tag">Sci-Fi</span>
+              </div>
+              <h3 class="spotlight-card-title"><a href="#" data-view-target="reader" data-comic-id="marvel-comics-1">Marvel Comics #1 (1939)</a></h3>
+              <p class="spotlight-creator">by <a href="#" rel="author">@CarlBurgos_BillEverett</a></p>
+              <div class="spotlight-card-stats">
+                <span>❤️ 2,450</span>
+                <span>👁️ 31,201</span>
+                <span>🎨 Golden Age Classic</span>
+              </div>
+              <div class="spotlight-card-actions">
+                <a href="#" class="btn btn--sm" data-view-target="reader" data-comic-id="marvel-comics-1">Read</a>
+                <a href="#" class="btn btn--sm btn--remix" data-view-target="studio" data-remix-comic="marvel-comics-1">Remix Script</a>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="spotlight-card-wrapper">
+          <article class="spotlight-card" aria-label="Spotlight: Captain America Comics #13 (1942)">
+            <figure class="spotlight-card-thumb"><img src="assets/img/cover-captain-america-13.jpg" alt="Captain America Comics #13" width="320" height="200" loading="lazy"/></figure>
+            <div class="spotlight-card-body">
+              <div class="spotlight-card-tags">
+                <span class="comic-tag">Original</span>
+                <span class="spotlight-genre-tag">Action</span>
+              </div>
+              <h3 class="spotlight-card-title"><a href="#" data-view-target="reader" data-comic-id="captain-america-13">Captain America Comics #13 (1942)</a></h3>
+              <p class="spotlight-creator">by <a href="#" rel="author">@JoeSimon_JackKirby</a></p>
+              <div class="spotlight-card-stats">
+                <span>❤️ 1,640</span>
+                <span>👁️ 21,901</span>
+                <span>🎨 Golden Age Classic</span>
+              </div>
+              <div class="spotlight-card-actions">
+                <a href="#" class="btn btn--sm" data-view-target="reader" data-comic-id="captain-america-13">Read</a>
+                <a href="#" class="btn btn--sm btn--remix" data-view-target="studio" data-remix-comic="captain-america-13">Remix Script</a>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ol>
+      <button class="spotlight-scroll-btn spotlight-scroll-btn--next" aria-label="Scroll right" aria-controls="spotlight-list"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </section>
+
+  <!-- ─── LANDING CTA ─── -->
+  <section class="landing-cta-section" aria-labelledby="landing-cta-heading">
+    <div class="landing-cta-inner">
+      <h2 id="landing-cta-heading" class="landing-cta-title">Ready to write your story?</h2>
+      <p class="landing-cta-subtitle">Turn any script &mdash; from a single panel to a full chapter &mdash; into a vivid comic strip with AI. No drawing skills required.</p>
+      <div class="landing-cta-actions" role="group">
+        <a href="#" class="btn btn--cta-primary" data-view-target="studio"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1L10 5.5H15L11 8.5L12.5 14L8 11L3.5 14L5 8.5L1 5.5H6L8 1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg> Open AI Studio</a>
+        <a href="#" class="btn btn--ghost" data-view-target="browse">Explore All Comics &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+</section>
+<!-- /view-landing -->
+
+<!-- ╔═══════════════════════════════════════════════════╗
+     VIEW 2 — BROWSE / DISCOVERY LIBRARY
+╚═══════════════════════════════════════════════════╝ -->
+<section id="view-browse" class="app-view app-view--browse" aria-label="Browse comics" data-view="browse" aria-hidden="true" hidden>
+
+  <div class="browse-layout">
+
+    <!-- Sidebar Filters -->
+    <aside id="browse-sidebar" class="browse-sidebar" aria-label="Filter comics">
+      <div class="browse-sidebar-inner">
+        <h2 class="browse-sidebar-title" id="sidebar-filters-heading">Filters</h2>
+        <button class="sidebar-filter-reset" id="clear-filters-btn" type="button" aria-label="Clear all filters">Clear All</button>
+
+        <form id="browse-filters-form" aria-labelledby="sidebar-filters-heading" novalidate>
+
+          <fieldset class="filter-fieldset">
+            <legend class="filter-legend">Category</legend>
+            <ul class="filter-checkbox-list" role="list">
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="shonen" class="filter-checkbox"> Shonen</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="seinen" class="filter-checkbox"> Seinen</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="romance" class="filter-checkbox"> Romance</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="isekai" class="filter-checkbox"> Isekai</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="webtoon-originals" class="filter-checkbox"> Webtoon Originals</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="category" value="slice-of-life" class="filter-checkbox"> Slice of Life</label></li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="filter-fieldset">
+            <legend class="filter-legend">Genre</legend>
+            <ul class="filter-checkbox-list" role="list">
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="genre" value="action" class="filter-checkbox"> Action</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="genre" value="cyberpunk" class="filter-checkbox"> Cyberpunk</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="genre" value="fantasy" class="filter-checkbox"> Fantasy</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="genre" value="horror" class="filter-checkbox"> Horror</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="genre" value="comedy" class="filter-checkbox"> Comedy</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="genre" value="mystery" class="filter-checkbox"> Mystery</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="genre" value="sci-fi" class="filter-checkbox"> Sci-Fi</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="genre" value="thriller" class="filter-checkbox"> Thriller</label></li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="filter-fieldset">
+            <legend class="filter-legend">Art Style</legend>
+            <ul class="filter-checkbox-list" role="list">
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="style" value="90s-anime" class="filter-checkbox"> 90s Anime</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="style" value="tactile-neo-comic" class="filter-checkbox"> Tactile Neo-Comic</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="style" value="noir-ink" class="filter-checkbox"> Noir Ink</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="style" value="watercolor" class="filter-checkbox"> Watercolor</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="style" value="chibi" class="filter-checkbox"> Chibi</label></li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="filter-fieldset">
+            <legend class="filter-legend">Status</legend>
+            <ul class="filter-checkbox-list" role="list">
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="status" value="ongoing" class="filter-checkbox"> Ongoing</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="status" value="completed" class="filter-checkbox"> Completed</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="status" value="hiatus" class="filter-checkbox"> On Hiatus</label></li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="filter-fieldset">
+            <legend class="filter-legend">AI-Generated</legend>
+            <ul class="filter-checkbox-list" role="list">
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="ai" value="ai-made" class="filter-checkbox"> AI-Made Only</label></li>
+              <li><label class="filter-checkbox-label"><input type="checkbox" name="ai" value="human-made" class="filter-checkbox"> Human-Made Only</label></li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="filter-fieldset">
+            <legend class="filter-legend">Rating</legend>
+            <div class="rating-range-control">
+              <input type="range" id="rating-min" min="1" max="5" step="0.5" value="1" class="range-input" aria-label="Minimum rating"/>
+              <div class="rating-range-labels"><span id="rating-min-label" aria-live="polite">1.0</span><span>to 5.0</span></div>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn--primary btn--full-width filter-apply-btn" id="apply-filters-btn">Apply Filters</button>
+        </form>
+      </div>
+    </aside>
+
+    <!-- Browse Main Content -->
+    <div class="browse-main" role="region" aria-label="Browse results">
+
+      <!-- Browse Toolbar -->
+      <div class="browse-toolbar" aria-label="Browse toolbar">
+        <div class="browse-toolbar-left">
+          <h2 class="browse-results-heading" id="browse-results-heading">
+            <span id="browse-genre-label">All Comics</span>
+            <span class="browse-result-count" id="browse-result-count" aria-live="polite" aria-atomic="true">(<span id="browse-count-number">48</span> results)</span>
+          </h2>
+        </div>
+        <div class="browse-toolbar-right">
+          <div class="view-toggle-group" role="group" aria-label="Grid view toggle">
+            <button class="view-toggle-btn view-toggle-btn--active" id="view-toggle-grid" aria-pressed="true" aria-label="Grid view"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="2"/><rect x="9" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="2"/><rect x="1" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="2"/><rect x="9" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="2"/></svg></button>
+            <button class="view-toggle-btn" id="view-toggle-list" aria-pressed="false" aria-label="List view"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 4h14M1 8h14M1 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          </div>
+          <label for="browse-sort-select" class="sr-only">Sort by</label>
+          <select id="browse-sort-select" class="select-input select-input--compact" aria-label="Sort results by">
+            <option value="trending">Trending</option>
+            <option value="rating">Top Rated</option>
+            <option value="views">Most Viewed</option>
+            <option value="newest">Newest</option>
+            <option value="updated">Recently Updated</option>
+          </select>
+          <button class="btn btn--icon sidebar-toggle-btn" id="sidebar-toggle-btn" aria-expanded="true" aria-controls="browse-sidebar" aria-label="Toggle filter sidebar">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <span>Filters</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Browse Active Tags -->
+      <div id="active-filter-tags" class="active-filter-tags" aria-label="Active filters" role="list" aria-live="polite"></div>
+
+      <!-- Browse Comic Grid -->
+      <ol id="browse-comic-grid" class="comic-grid comic-grid--browse" role="list" aria-label="Browse comic grid" aria-labelledby="browse-results-heading">
+        <li class="comic-card-wrapper">
+          <article class="comic-card" data-comic-id="amazing-fantasy-15" data-genres="Action" data-styles="Vintage 60s Marvel" data-ai="false">
+            <a href="#" class="comic-card-link" data-view-target="reader" data-comic-id="amazing-fantasy-15" tabindex="-1" aria-hidden="true">
+              <figure class="comic-card-cover">
+                <img src="assets/img/cover-amazing-fantasy-15.jpg" alt="Amazing Fantasy #15: Spider-Man! cover" width="260" height="340" loading="lazy"/>
+                <div class="comic-card-cover-overlay" aria-hidden="true">
+                  <div class="card-quick-read-btn">Read</div>
+                </div>
+              </figure>
+            </a>
+            <div class="comic-card-body">
+              <div class="comic-card-tags">
+                <span class="comic-tag comic-tag--action">Action</span>
+                <span class="comic-tag">Superheroes</span>
+              </div>
+              <h3 class="comic-card-title"><a href="#" data-view-target="reader" data-comic-id="amazing-fantasy-15">Amazing Fantasy #15: Spider-Man!</a></h3>
+              <address class="comic-card-creator"><a href="#" rel="author">@StanLee_SteveDitko</a></address>
+              <footer class="comic-card-footer">
+                <div class="comic-card-stats">
+                  <span class="comic-stat" aria-label="Rating 5.0"><svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M6 1L7.5 4.5H11L8 6.5L9.2 10.5L6 8.5L2.8 10.5L4 6.5L1 4.5H4.5L6 1z"/></svg> 5.0</span>
+                  <span class="comic-stat">👁️ 48,502</span>
+                </div>
+                <div class="comic-card-actions">
+                  <button class="card-action-btn bookmark-btn" aria-label="Bookmark Amazing Fantasy #15: Spider-Man!" aria-pressed="false"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 2h8a1 1 0 011 1v9l-5-3-5 3V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></button>
+                  <a href="#" class="card-action-btn card-remix-btn" data-view-target="studio" data-remix-comic="amazing-fantasy-15" aria-label="Remix in AI Studio"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M7 3h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+              </footer>
+            </div>
+          </article>
+        </li>
+        <li class="comic-card-wrapper">
+          <article class="comic-card" data-comic-id="marvel-comics-1" data-genres="Sci-Fi" data-styles="Golden Age Classic" data-ai="false">
+            <a href="#" class="comic-card-link" data-view-target="reader" data-comic-id="marvel-comics-1" tabindex="-1" aria-hidden="true">
+              <figure class="comic-card-cover">
+                <img src="assets/img/cover-marvel-comics-1.jpg" alt="Marvel Comics #1 (1939) cover" width="260" height="340" loading="lazy"/>
+                <div class="comic-card-cover-overlay" aria-hidden="true">
+                  <div class="card-quick-read-btn">Read</div>
+                </div>
+              </figure>
+            </a>
+            <div class="comic-card-body">
+              <div class="comic-card-tags">
+                <span class="comic-tag comic-tag--scifi">Sci-Fi</span>
+                <span class="comic-tag">Classic</span>
+              </div>
+              <h3 class="comic-card-title"><a href="#" data-view-target="reader" data-comic-id="marvel-comics-1">Marvel Comics #1 (1939)</a></h3>
+              <address class="comic-card-creator"><a href="#" rel="author">@CarlBurgos_BillEverett</a></address>
+              <footer class="comic-card-footer">
+                <div class="comic-card-stats">
+                  <span class="comic-stat" aria-label="Rating 5.0"><svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M6 1L7.5 4.5H11L8 6.5L9.2 10.5L6 8.5L2.8 10.5L4 6.5L1 4.5H4.5L6 1z"/></svg> 5.0</span>
+                  <span class="comic-stat">👁️ 31,201</span>
+                </div>
+                <div class="comic-card-actions">
+                  <button class="card-action-btn bookmark-btn" aria-label="Bookmark Marvel Comics #1" aria-pressed="false"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 2h8a1 1 0 011 1v9l-5-3-5 3V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></button>
+                  <a href="#" class="card-action-btn card-remix-btn" data-view-target="studio" data-remix-comic="marvel-comics-1" aria-label="Remix in AI Studio"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M7 3h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+              </footer>
+            </div>
+          </article>
+        </li>
+        <li class="comic-card-wrapper">
+          <article class="comic-card" data-comic-id="captain-america-13" data-genres="Action" data-styles="Golden Age Classic" data-ai="false">
+            <a href="#" class="comic-card-link" data-view-target="reader" data-comic-id="captain-america-13" tabindex="-1" aria-hidden="true">
+              <figure class="comic-card-cover">
+                <img src="assets/img/cover-captain-america-13.jpg" alt="Captain America Comics #13 (1942) cover" width="260" height="340" loading="lazy"/>
+                <div class="comic-card-cover-overlay" aria-hidden="true">
+                  <div class="card-quick-read-btn">Read</div>
+                </div>
+              </figure>
+            </a>
+            <div class="comic-card-body">
+              <div class="comic-card-tags">
+                <span class="comic-tag comic-tag--action">Action</span>
+                <span class="comic-tag">Golden Age</span>
+              </div>
+              <h3 class="comic-card-title"><a href="#" data-view-target="reader" data-comic-id="captain-america-13">Captain America Comics #13 (1942)</a></h3>
+              <address class="comic-card-creator"><a href="#" rel="author">@JoeSimon_JackKirby</a></address>
+              <footer class="comic-card-footer">
+                <div class="comic-card-stats">
+                  <span class="comic-stat" aria-label="Rating 4.9"><svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M6 1L7.5 4.5H11L8 6.5L9.2 10.5L6 8.5L2.8 10.5L4 6.5L1 4.5H4.5L6 1z"/></svg> 4.9</span>
+                  <span class="comic-stat">👁️ 21,901</span>
+                </div>
+                <div class="comic-card-actions">
+                  <button class="card-action-btn bookmark-btn" aria-label="Bookmark Captain America Comics #13" aria-pressed="false"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 2h8a1 1 0 011 1v9l-5-3-5 3V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></button>
+                  <a href="#" class="card-action-btn card-remix-btn" data-view-target="studio" data-remix-comic="captain-america-13" aria-label="Remix in AI Studio"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 11L11 3M7 3h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+              </footer>
+            </div>
+          </article>
+        </li>
+      </ol>
+
+      <!-- Load More -->
+      <div class="browse-load-more-wrapper" aria-label="Load more comics">
+        <button class="btn btn--ghost btn--load-more" id="browse-load-more-btn" aria-label="Load more comics">Load More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<!-- /view-browse -->
+
+
+<!-- ╔═══════════════════════════════════════════════════╗
+     VIEW 3 — COMIC READER
+╚═══════════════════════════════════════════════════╝ -->
+<section id="view-reader" class="app-view app-view--reader" aria-label="Comic reader" data-view="reader" aria-hidden="true" hidden>
+
+  <div class="reader-layout">
+
+    <!-- Reader Sidebar: Chapter List -->
+    <aside id="reader-chapter-sidebar" class="reader-sidebar" aria-label="Chapter navigation" hidden>
+      <div class="reader-sidebar-inner">
+        <div class="reader-sidebar-header">
+          <h2 class="reader-sidebar-title" id="reader-sidebar-comic-title">Amazing Fantasy #15: Spider-Man!</h2>
+          <button class="reader-sidebar-close" id="chapter-sidebar-close-btn" aria-label="Close chapter list"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+        </div>
+        <nav aria-label="Chapter list">
+          <ol class="chapter-list" id="reader-chapter-list" role="list">
+            <li class="chapter-list-item chapter-list-item--active" data-chapter="1">
+              <a href="#" class="chapter-list-link" data-chapter="1">
+                <span class="chapter-list-num">Ch. 1</span>
+                <span class="chapter-list-title">Spider-Man! (Complete Origin Issue)</span>
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Reader Main -->
+    <div class="reader-main" id="reader-main" role="main" aria-label="Comic reading area">
+
+      <!-- Reader Top Bar -->
+      <div class="reader-topbar" aria-label="Reader controls" role="toolbar">
+        <button class="reader-topbar-btn" id="chapter-list-toggle-btn" aria-label="Toggle chapter list" aria-expanded="false" aria-controls="reader-chapter-sidebar">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span>Chapters</span>
+        </button>
+        <div class="reader-breadcrumb" aria-label="Current comic and chapter">
+          <span class="reader-comic-title-breadcrumb" id="reader-comic-breadcrumb">Amazing Fantasy #15: Spider-Man!</span>
+          <span aria-hidden="true">/</span>
+          <span class="reader-chapter-breadcrumb" id="reader-chapter-breadcrumb">Chapter 1</span>
+        </div>
+        <div class="reader-view-controls" role="group" aria-label="Reading mode controls">
+          <button class="reader-mode-btn reader-mode-btn--active" id="reader-mode-page" aria-pressed="true" aria-label="Page mode">&#x1F4D6; Page</button>
+          <button class="reader-mode-btn" id="reader-mode-scroll" aria-pressed="false" aria-label="Scroll mode">&#x21F3; Scroll</button>
+          <button class="reader-mode-btn" id="reader-mode-webtoon" aria-pressed="false" aria-label="Webtoon mode">&#x1F4F1; Webtoon</button>
+        </div>
+        <div class="reader-topbar-actions" role="group" aria-label="Reader actions">
+          <button class="reader-topbar-btn" id="reader-settings-toggle" aria-label="Reader settings" aria-expanded="false" aria-controls="reader-settings-panel"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="2.5" stroke="currentColor" stroke-width="2"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M2.9 2.9l1.4 1.4M11.7 11.7l1.4 1.4M2.9 13.1l1.4-1.4M11.7 4.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Settings</button>
+          <button class="reader-topbar-btn bookmark-btn" id="reader-bookmark-btn" aria-label="Bookmark this comic" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 2h8a1 1 0 011 1v11l-5-3.5L3 14V3a1 1 0 011-1z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg> Save</button>
+          <a href="#" class="reader-topbar-btn" data-view-target="studio" id="reader-remix-btn" aria-label="Remix this comic in AI Studio"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M8 4h4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Remix</a>
+        </div>
+      </div>
+
+      <!-- Reader Settings Panel -->
+      <aside id="reader-settings-panel" class="reader-settings-panel" aria-label="Reader display settings" hidden>
+        <h3 class="reader-settings-title">Display Settings</h3>
+        <div class="reader-settings-row">
+          <label for="reader-bg-color" class="reader-settings-label">Background</label>
+          <div class="reader-bg-swatches" role="group" aria-label="Background color options">
+            <button class="reader-bg-swatch reader-bg-swatch--black reader-bg-swatch--active" data-bg="black" aria-pressed="true" aria-label="Black background"></button>
+            <button class="reader-bg-swatch reader-bg-swatch--dark" data-bg="dark" aria-pressed="false" aria-label="Dark background"></button>
+            <button class="reader-bg-swatch reader-bg-swatch--sepia" data-bg="sepia" aria-pressed="false" aria-label="Sepia background"></button>
+            <button class="reader-bg-swatch reader-bg-swatch--white" data-bg="white" aria-pressed="false" aria-label="White background"></button>
+          </div>
+        </div>
+        <div class="reader-settings-row">
+          <label for="reader-zoom-range" class="reader-settings-label">Zoom: <span id="reader-zoom-label">100%</span></label>
+          <input type="range" id="reader-zoom-range" min="50" max="200" step="10" value="100" class="range-input" aria-label="Zoom level" aria-valuemin="50" aria-valuemax="200" aria-valuenow="100"/>
+        </div>
+        <div class="reader-settings-row">
+          <label for="reader-fit-select" class="reader-settings-label">Fit</label>
+          <select id="reader-fit-select" class="select-input select-input--compact" aria-label="Page fit mode">
+            <option value="fit-width">Fit Width</option>
+            <option value="fit-height">Fit Height</option>
+            <option value="original">Original Size</option>
+          </select>
+        </div>
+        <div class="reader-settings-row">
+          <label class="reader-settings-label">Audio & Voice</label>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button class="btn btn--sm btn--ghost" id="reader-bgm-toggle" type="button" aria-label="Toggle ambient soundtrack">🎵 <span id="bgm-label">Ambient Sound</span></button>
+            <button class="btn btn--sm btn--ghost" id="reader-tts-toggle" type="button" aria-label="Toggle narration voice">🗣️ <span id="tts-label">Narration Voice</span></button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Page Reader Canvas -->
+      <div id="reader-canvas-area" class="reader-canvas-area" aria-label="Comic pages" role="region">
+        <div id="page-reader" class="page-reader" data-mode="page">
+
+          <!-- Panel display area -->
+          <figure class="reader-page-frame" id="reader-page-frame">
+            <img id="reader-page-img" src="assets/comics/amazing-fantasy-15/page-01.jpg" alt="Amazing Fantasy #15: Spider-Man! - Page 1" width="800" height="1200" loading="eager"/>
+            <figcaption class="reader-page-label" aria-live="polite">Page <span id="current-page-num">1</span> of <span id="total-page-num">39</span></figcaption>
+          </figure>
+
+          <!-- Speech Bubble Overlay (Fabric.js canvas) -->
+          <div id="speech-bubble-layer" class="speech-bubble-layer" aria-hidden="true" role="presentation">
+            <canvas id="fabric-reader-canvas" aria-label="Interactive speech bubble overlay"></canvas>
+          </div>
+
+          <!-- Page Navigation Controls -->
+          <nav class="reader-page-nav" aria-label="Page navigation">
+            <button class="reader-nav-btn reader-nav-btn--prev" id="page-prev-btn" aria-label="Previous page" disabled>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M13 4L7 10l6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="reader-page-indicator" aria-live="polite" aria-atomic="true">
+              <input type="number" id="page-jump-input" class="page-jump-input" min="1" max="39" value="1" aria-label="Jump to page number"/>
+              <span class="page-indicator-separator">/</span>
+              <span class="page-total" id="page-total-display">39</span>
+            </div>
+            <button class="reader-nav-btn reader-nav-btn--next" id="page-next-btn" aria-label="Next page">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Chapter End CTA -->
+      <div class="chapter-end-cta" id="chapter-end-cta" aria-label="End of chapter, what next?" hidden>
+        <p class="chapter-end-message">&#x1F4AF; You&rsquo;ve reached the end of the chapter!</p>
+        <div class="chapter-end-actions" role="group">
+          <button class="btn btn--primary" id="next-chapter-btn" data-chapter="2">Read Next Chapter &rarr;</button>
+          <button class="btn btn--ghost bookmark-btn" aria-pressed="false">&#x1F516; Save for Later</button>
+          <a href="#" class="btn btn--ghost" data-view-target="studio" data-remix-comic="amazing-fantasy-15">Remix Script</a>
+        </div>
+      </div>
+
+      <!-- Reader Comments Panel -->
+      <section id="reader-comments-section" class="reader-comments-section" aria-labelledby="comments-heading">
+        <div class="reader-comments-header">
+          <h2 id="comments-heading" class="reader-comments-title">Comments</h2>
+          <button class="comments-toggle-btn" id="comments-toggle-btn" aria-expanded="true" aria-controls="comments-list">&#x25BC; Hide</button>
+        </div>
+
+        <!-- Reaction Picker -->
+        <div class="reaction-picker-bar" role="group" aria-label="React to this comic">
+          <button class="reaction-btn" data-reaction="fire" aria-label="Fire reaction, 843">&#x1F525; <span class="reaction-count">843</span></button>
+          <button class="reaction-btn" data-reaction="heart" aria-label="Heart reaction, 1204">&#x2764;&#xFE0F; <span class="reaction-count">1204</span></button>
+          <button class="reaction-btn" data-reaction="mind-blown" aria-label="Mind blown reaction, 421">&#x1F92F; <span class="reaction-count">421</span></button>
+          <button class="reaction-btn" data-reaction="laugh" aria-label="Laugh reaction, 112">&#x1F602; <span class="reaction-count">112</span></button>
+          <button class="reaction-btn" data-reaction="cry" aria-label="Cry reaction, 318">&#x1F62D; <span class="reaction-count">318</span></button>
+          <button class="reaction-btn" data-reaction="chef-kiss" aria-label="Chef kiss reaction, 207">&#x1F44C; <span class="reaction-count">207</span></button>
+        </div>
+
+        <!-- Comment Form -->
+        <form class="comment-form" id="comment-form" aria-label="Write a comment">
+          <label class="sr-only" for="comment-input">Write a comment</label>
+          <div class="comment-input-wrapper">
+            <img class="comment-avatar" src="assets/img/avatar-user.jpg" alt="Your avatar" width="36" height="36" loading="lazy"/>
+            <textarea id="comment-input" class="comment-textarea" name="comment" rows="2" placeholder="Share your thoughts on Chapter 1..." maxlength="1000" aria-label="Comment text" aria-describedby="comment-char-count"></textarea>
+          </div>
+          <div class="comment-form-footer">
+            <span id="comment-char-count" class="char-counter" aria-live="polite" aria-atomic="true">0 / 1000</span>
+            <button type="submit" class="btn btn--primary btn--sm comment-submit-btn" id="comment-submit-btn" aria-label="Post comment">Post Comment</button>
+          </div>
+        </form>
+
+        <!-- Comment List -->
+        <ol id="comments-list" class="comments-list" role="list" aria-label="Reader comments" aria-live="polite">
+          <li class="comment-item" id="comment-1">
+            <article class="comment-card" aria-labelledby="comment-1-author">
+              <header class="comment-card-header">
+                <img class="comment-author-avatar" src="assets/img/avatar-user.jpg" alt="Reader avatar" width="32" height="32" loading="lazy"/>
+                <span id="comment-1-author" class="comment-author-name">@comic_fan</span>
+                <time class="comment-timestamp" datetime="2026-09-05T14:22:00Z">1 day ago</time>
+              </header>
+              <p class="comment-body">The art on this scene is absolutely fantastic. That depth perspective and lighting look incredible! &#x1F92F;</p>
+              <footer class="comment-card-footer">
+                <button class="comment-like-btn" aria-label="Like this comment, 47 likes" aria-pressed="false"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 10C6 10 1 7 1 4a2.5 2.5 0 015-0.5A2.5 2.5 0 0111 4c0 3-5 6-5 6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg> <span>47</span></button>
+                <button class="comment-reply-btn" aria-label="Reply to comment">Reply</button>
+              </footer>
+            </article>
+          </li>
+          <li class="comment-item" id="comment-2">
+            <article class="comment-card" aria-labelledby="comment-2-author">
+              <header class="comment-card-header">
+                <img class="comment-author-avatar" src="assets/img/avatar-user.jpg" alt="Reader avatar" width="32" height="32" loading="lazy"/>
+                <span id="comment-2-author" class="comment-author-name">@manga_reader</span>
+                <time class="comment-timestamp" datetime="2026-09-06T08:15:00Z">3 hours ago</time>
+              </header>
+              <p class="comment-body">The pacing in this chapter is so good. Excited to see what happens in the next scene! &#x1F525;</p>
+              <footer class="comment-card-footer">
+                <button class="comment-like-btn" aria-label="Like this comment, 23 likes" aria-pressed="false"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 10C6 10 1 7 1 4a2.5 2.5 0 015-0.5A2.5 2.5 0 0111 4c0 3-5 6-5 6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg> <span>23</span></button>
+                <button class="comment-reply-btn" aria-label="Reply to comment">Reply</button>
+              </footer>
+            </article>
+          </li>
+        </ol>
+      </section>
+
+    </div>
+  </div>
+
+</section>
+<!-- /view-reader -->
+
+<!-- ╔═══════════════════════════════════════════════════╗
+     VIEW 4 — AI SCRIPT-TO-COMIC STUDIO
+╚═══════════════════════════════════════════════════╝ -->
+<section id="view-studio" class="app-view app-view--studio" aria-label="AI Script-to-Comic Studio" data-view="studio" aria-hidden="true" hidden>
+
+  <div class="studio-layout">
+
+    <!-- Studio Left Panel: Script Input -->
+    <aside id="studio-input-panel" class="studio-panel studio-panel--input" aria-label="Script input panel">
+
+      <div class="studio-panel-header">
+        <h2 class="studio-panel-title" id="studio-input-heading">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M3 9h14M3 13h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Script Editor
+        </h2>
+        <div class="studio-mode-tabs" role="tablist" aria-label="Input mode">
+          <button class="studio-mode-tab studio-mode-tab--active" role="tab" id="studio-tab-script" aria-selected="true" aria-controls="studio-script-panel" data-studio-mode="script">Script</button>
+          <button class="studio-mode-tab" role="tab" id="studio-tab-prompt" aria-selected="false" aria-controls="studio-prompt-panel" data-studio-mode="prompt">Prompt</button>
+          <button class="studio-mode-tab" role="tab" id="studio-tab-remix" aria-selected="false" aria-controls="studio-remix-panel" data-studio-mode="remix">Remix</button>
+        </div>
+      </div>
+
+      <!-- Script Mode Panel -->
+      <div id="studio-script-panel" class="studio-input-subpanel" role="tabpanel" aria-labelledby="studio-tab-script">
+        <form id="studio-script-form" class="studio-input-form" aria-labelledby="studio-input-heading" novalidate>
+
+          <!-- Script Metadata -->
+          <fieldset class="studio-fieldset studio-fieldset--metadata">
+            <legend class="sr-only">Comic metadata</legend>
+            <div class="studio-form-row studio-form-row--two-col">
+              <div class="studio-form-group">
+                <label class="studio-label" for="studio-comic-title">Comic Title <span aria-hidden="true">*</span></label>
+                <input type="text" id="studio-comic-title" name="title" class="studio-input" placeholder="e.g. Neon Ghost Protocol" maxlength="80" required aria-required="true" aria-describedby="title-char-count"/>
+                <span id="title-char-count" class="char-counter" aria-live="polite" aria-atomic="true">0 / 80</span>
+              </div>
+              <div class="studio-form-group">
+                <label class="studio-label" for="studio-genre-select">Genre</label>
+                <select id="studio-genre-select" name="genre" class="select-input" aria-label="Comic genre">
+                  <option value="">Select genre...</option>
+                  <option value="action">Action</option>
+                  <option value="cyberpunk">Cyberpunk</option>
+                  <option value="fantasy">Fantasy</option>
+                  <option value="horror">Horror</option>
+                  <option value="comedy">Comedy</option>
+                  <option value="mystery">Mystery</option>
+                  <option value="sci-fi">Sci-Fi</option>
+                  <option value="romance">Romance</option>
+                  <option value="thriller">Thriller</option>
+                  <option value="slice-of-life">Slice of Life</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Script Text Area -->
+          <fieldset class="studio-fieldset">
+            <legend class="studio-legend">Your Script</legend>
+            <div class="studio-script-controls">
+              <button type="button" class="studio-script-helper-btn" id="script-format-guide-btn" aria-expanded="false" aria-controls="script-format-guide">Format Guide</button>
+              <button type="button" class="studio-script-helper-btn" id="script-load-template-btn">Load Template</button>
+              <button type="button" class="studio-script-helper-btn" id="script-load-remix-btn" disabled>Load Remix</button>
+            </div>
+            <div id="script-format-guide" class="script-format-guide" hidden role="region" aria-label="Script format guide">
+              <p class="guide-title">Screenplay Format:</p>
+              <code class="guide-code">PANEL 1: [Scene description]<br/>CHARACTER NAME: Dialogue in quotes.<br/>(Action/emotion note)<br/>SFX: BOOM!</code>
+            </div>
+            <label for="studio-script-textarea" class="sr-only">Enter your comic script (required)</label>
+            <textarea id="studio-script-textarea" name="script" class="studio-textarea" rows="18" placeholder="PANEL 1: Wide shot — a gleaming cyberpunk city at midnight. Holographic signs illuminate towering glass facades.
+
+HERO (V.O.): Every city has a heartbeat. Ours runs on code.
+
+PANEL 2: Close-up on the hero's visor as data streams reflect across the glass.
+
+SFX: VREEEEM..." maxlength="10000" required aria-required="true" aria-describedby="script-char-count script-char-warning"></textarea>
+            <div class="studio-textarea-footer">
+              <span id="script-char-count" class="char-counter" aria-live="polite" aria-atomic="true">0 / 10,000</span>
+              <span id="script-char-warning" class="char-counter-warning" aria-live="assertive" hidden>Near character limit!</span>
+            </div>
+          </fieldset>
+
+          <!-- Style Selection -->
+          <fieldset class="studio-fieldset">
+            <legend class="studio-legend">Art Style</legend>
+            <div class="art-style-selector" role="group" aria-label="Art style options">
+              <label class="art-style-option">
+                <input type="radio" name="art_style" value="tactile-neo-comic" class="art-style-radio" checked aria-label="Tactile Neo-Comic style"/>
+                <span class="art-style-card" role="presentation">
+                  <span class="art-style-preview art-style-preview--neo-comic" aria-hidden="true"></span>
+                  <span class="art-style-name">Tactile Neo-Comic</span>
+                </span>
+              </label>
+              <label class="art-style-option">
+                <input type="radio" name="art_style" value="90s-anime" class="art-style-radio" aria-label="90s Anime style"/>
+                <span class="art-style-card" role="presentation">
+                  <span class="art-style-preview art-style-preview--anime" aria-hidden="true"></span>
+                  <span class="art-style-name">90s Anime</span>
+                </span>
+              </label>
+              <label class="art-style-option">
+                <input type="radio" name="art_style" value="noir-ink" class="art-style-radio" aria-label="Noir Ink style"/>
+                <span class="art-style-card" role="presentation">
+                  <span class="art-style-preview art-style-preview--noir" aria-hidden="true"></span>
+                  <span class="art-style-name">Noir Ink</span>
+                </span>
+              </label>
+              <label class="art-style-option">
+                <input type="radio" name="art_style" value="watercolor" class="art-style-radio" aria-label="Watercolor style"/>
+                <span class="art-style-card" role="presentation">
+                  <span class="art-style-preview art-style-preview--watercolor" aria-hidden="true"></span>
+                  <span class="art-style-name">Watercolor</span>
+                </span>
+              </label>
+              <label class="art-style-option">
+                <input type="radio" name="art_style" value="chibi" class="art-style-radio" aria-label="Chibi style"/>
+                <span class="art-style-card" role="presentation">
+                  <span class="art-style-preview art-style-preview--chibi" aria-hidden="true"></span>
+                  <span class="art-style-name">Chibi</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- AI Model Selection -->
+          <fieldset class="studio-fieldset">
+            <legend class="studio-legend">AI Engine</legend>
+            <div class="ai-engine-selector" role="group" aria-label="AI engine selection">
+              <label class="ai-engine-option">
+                <input type="radio" name="ai_engine" value="pollinations" class="ai-engine-radio" checked aria-label="Pollinations AI (free)"/>
+                <span class="ai-engine-card">
+                  <span class="ai-engine-icon" aria-hidden="true">&#x1F33C;</span>
+                  <span class="ai-engine-name">Pollinations</span>
+                  <span class="ai-engine-badge ai-engine-badge--free">Free</span>
+                </span>
+              </label>
+              <label class="ai-engine-option">
+                <input type="radio" name="ai_engine" value="huggingface" class="ai-engine-radio" aria-label="Hugging Face Inference API (free)"/>
+                <span class="ai-engine-card">
+                  <span class="ai-engine-icon" aria-hidden="true">&#x1F917;</span>
+                  <span class="ai-engine-name">Hugging Face</span>
+                  <span class="ai-engine-badge ai-engine-badge--free">Free</span>
+                </span>
+              </label>
+              <label class="ai-engine-option">
+                <input type="radio" name="ai_engine" value="gemini" class="ai-engine-radio" aria-label="Gemini (Pro feature)"/>
+                <span class="ai-engine-card">
+                  <span class="ai-engine-icon" aria-hidden="true">&#x2728;</span>
+                  <span class="ai-engine-name">Gemini</span>
+                  <span class="ai-engine-badge ai-engine-badge--pro">PRO</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Advanced Options -->
+          <details class="studio-advanced-options" id="studio-advanced-toggle">
+            <summary class="studio-advanced-summary">Advanced Options <svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></summary>
+            <div class="studio-advanced-inner">
+              <div class="studio-form-row studio-form-row--two-col">
+                <div class="studio-form-group">
+                  <label class="studio-label" for="panel-count">Panels per Page</label>
+                  <select id="panel-count" name="panel_count" class="select-input" aria-label="Number of panels per page">
+                    <option value="2">2 panels</option>
+                    <option value="3">3 panels</option>
+                    <option value="4" selected>4 panels</option>
+                    <option value="6">6 panels</option>
+                    <option value="auto">Auto (AI decides)</option>
+                  </select>
+                </div>
+                <div class="studio-form-group">
+                  <label class="studio-label" for="panel-layout">Panel Layout</label>
+                  <select id="panel-layout" name="panel_layout" class="select-input" aria-label="Panel layout type">
+                    <option value="standard">Standard Grid</option>
+                    <option value="dynamic">Dynamic (varied)</option>
+                    <option value="vertical">Vertical Scroll</option>
+                    <option value="cinematic">Cinematic Widescreen</option>
+                  </select>
+                </div>
+              </div>
+              <div class="studio-form-group">
+                <label class="studio-label" for="negative-prompt">Negative Prompt (exclude)</label>
+                <input type="text" id="negative-prompt" name="negative_prompt" class="studio-input" placeholder="e.g. text, watermark, blurry" maxlength="200"/>
+              </div>
+              <div class="studio-form-group">
+                <label class="studio-label" for="style-strength-range">Style Strength: <span id="style-strength-label">70%</span></label>
+                <input type="range" id="style-strength-range" name="style_strength" min="10" max="100" step="5" value="70" class="range-input" aria-label="Style strength percentage" aria-valuemin="10" aria-valuemax="100" aria-valuenow="70"/>
+              </div>
+            </div>
+          </details>
+
+          <!-- Generate Button -->
+          <div class="studio-generate-row">
+            <button type="submit" class="btn btn--generate" id="generate-btn" aria-label="Generate comic from script" aria-describedby="generate-status-msg">
+              <span class="generate-btn-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 1L12.5 7H19L14 10.5L16 17L10 13.5L4 17L6 10.5L1 7H7.5L10 1z" fill="currentColor" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="generate-btn-text" id="generate-btn-text">Generate Comic</span>
+              <span class="generate-btn-spinner" aria-hidden="true" hidden></span>
+            </button>
+            <p id="generate-status-msg" class="generate-status-msg" aria-live="polite" aria-atomic="true"></p>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Prompt Mode Panel -->
+      <div id="studio-prompt-panel" class="studio-input-subpanel" role="tabpanel" aria-labelledby="studio-tab-prompt" hidden>
+        <form id="studio-prompt-form" class="studio-input-form" novalidate>
+          <div class="studio-form-group">
+            <label class="studio-label" for="studio-prompt-input">Scene Prompt</label>
+            <textarea id="studio-prompt-input" name="prompt" class="studio-textarea" rows="8" placeholder="Describe a comic panel scene. e.g. 'A cyberpunk detective in a rain-soaked alley examining a glowing clue on her wrist scanner. Neon blues and purples.'" maxlength="2000" aria-describedby="prompt-char-count"></textarea>
+            <span id="prompt-char-count" class="char-counter" aria-live="polite">0 / 2,000</span>
+          </div>
+          <div class="studio-form-row studio-form-row--two-col">
+            <div class="studio-form-group">
+              <label class="studio-label" for="prompt-num-panels">Number of Panels</label>
+              <select id="prompt-num-panels" name="num_panels" class="select-input"><option value="1">1 panel</option><option value="2">2 panels</option><option value="4" selected>4 panels</option><option value="6">6 panels</option></select>
+            </div>
+            <div class="studio-form-group">
+              <label class="studio-label" for="prompt-style-select">Art Style</label>
+              <select id="prompt-style-select" name="art_style" class="select-input"><option value="tactile-neo-comic">Tactile Neo-Comic</option><option value="90s-anime">90s Anime</option><option value="noir-ink">Noir Ink</option><option value="watercolor">Watercolor</option><option value="chibi">Chibi</option></select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn--generate" id="prompt-generate-btn" aria-label="Generate panels from prompt">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 1L11.2 6.5H17L12.3 9.8L14.1 15.5L9 12.3L3.9 15.5L5.7 9.8L1 6.5H6.8L9 1z" fill="currentColor" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            Generate from Prompt
+          </button>
+        </form>
+      </div>
+
+      <!-- Remix Mode Panel -->
+      <div id="studio-remix-panel" class="studio-input-subpanel" role="tabpanel" aria-labelledby="studio-tab-remix" hidden>
+        <div class="studio-remix-info" aria-label="Remix source comic info">
+          <p class="remix-info-label">Remixing from:</p>
+          <div class="remix-source-card">
+            <img src="assets/img/cover-amazing-fantasy-15.jpg" alt="Source comic cover" width="50" height="65" class="remix-source-thumb" id="remix-source-thumb" loading="lazy"/>
+            <div class="remix-source-info"><strong id="remix-source-title">Amazing Fantasy #15: Spider-Man!</strong><span id="remix-source-author">by @StanLee_SteveDitko</span></div>
+          </div>
+          <p class="remix-source-script-label">Original Script (editable):</p>
+        </div>
+        <form id="studio-remix-form" class="studio-input-form" novalidate>
+          <label for="remix-script-textarea" class="sr-only">Remix script (editable)</label>
+          <textarea id="remix-script-textarea" name="remix_script" class="studio-textarea" rows="14" placeholder="The original script will be loaded here. Edit it to create your remix..." maxlength="10000" aria-describedby="remix-char-count"></textarea>
+          <span id="remix-char-count" class="char-counter" aria-live="polite">0 / 10,000</span>
+          <button type="submit" class="btn btn--generate" id="remix-generate-btn" aria-label="Generate remix comic">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 14L14 4M9 4h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Generate Remix
+          </button>
+        </form>
+      </div>
+
+    </aside>
+
+    <!-- Studio Right Panel: Preview / Output -->
+    <main id="studio-output-panel" class="studio-panel studio-panel--output" role="main" aria-label="Generated comic preview">
+
+      <div class="studio-output-header">
+        <h2 class="studio-panel-title" id="studio-output-heading">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="11" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="2" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="11" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/></svg>
+          Comic Preview
+        </h2>
+        <div class="studio-output-actions" role="group" aria-label="Output actions">
+          <button class="btn btn--sm" id="studio-undo-btn" aria-label="Undo last change" disabled>&#x21B6; Undo</button>
+          <button class="btn btn--sm" id="studio-redo-btn" aria-label="Redo last change" disabled>&#x21B7; Redo</button>
+          <button class="btn btn--sm" id="studio-add-bubble-btn" aria-label="Add speech bubble" disabled>&#x1F4AC; Add Bubble</button>
+          <button class="btn btn--sm btn--primary" id="studio-publish-btn" aria-label="Publish this comic" disabled>&#x1F680; Publish</button>
+          <button class="btn btn--sm" id="studio-download-btn" aria-label="Download comic panels" disabled>&#x2B07;&#xFE0F; Download</button>
+        </div>
+      </div>
+
+      <!-- Generation Status / Progress -->
+      <div id="studio-generation-status" class="studio-generation-status" aria-label="Generation status" aria-live="polite" aria-atomic="false" hidden>
+        <div class="generation-progress-wrap">
+          <div class="generation-spinner" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="3" stroke-dasharray="88" stroke-dashoffset="44" stroke-linecap="round"/></svg>
+          </div>
+          <div class="generation-status-text">
+            <p class="generation-stage" id="generation-stage-label">Parsing your script&hellip;</p>
+            <progress id="generation-progress-bar" class="generation-progress-bar" max="100" value="0" aria-label="Generation progress"></progress>
+            <p class="generation-step-detail" id="generation-step-detail" aria-live="polite">Step 1 of 4: Analysing scene descriptions&hellip;</p>
+          </div>
+        </div>
+        <button class="btn btn--ghost btn--sm" id="generation-cancel-btn" aria-label="Cancel generation">Cancel</button>
+      </div>
+
+      <!-- Empty State (default when no generation yet) -->
+      <div id="studio-empty-state" class="studio-empty-state" aria-label="Studio empty state">
+        <div class="empty-state-illustration" aria-hidden="true">
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+            <rect x="10" y="10" width="44" height="44" rx="6" stroke="currentColor" stroke-width="3" opacity="0.3"/>
+            <rect x="66" y="10" width="44" height="44" rx="6" stroke="currentColor" stroke-width="3" opacity="0.3"/>
+            <rect x="10" y="66" width="44" height="44" rx="6" stroke="currentColor" stroke-width="3" opacity="0.3"/>
+            <rect x="66" y="66" width="44" height="44" rx="6" stroke="currentColor" stroke-width="3" opacity="0.3"/>
+            <path d="M60 50L65 35H75L68 42L71 55L60 50L49 55L52 42L45 35H55L60 50z" fill="currentColor" opacity="0.2"/>
+          </svg>
+        </div>
+        <h3 class="empty-state-title">Your comic will appear here</h3>
+        <p class="empty-state-subtitle">Write your script on the left, choose a style, and hit Generate to bring your panels to life with AI.</p>
+        <button class="btn btn--ghost btn--sm" id="load-example-script-btn">Load Example Script</button>
+      </div>
+
+      <!-- Generated Panels Output -->
+      <div id="studio-panels-output" class="studio-panels-output" aria-label="Generated comic panels" hidden>
+
+        <!-- Fabric.js Canvas Wrapper for speech bubble editing -->
+        <div id="studio-fabric-wrapper" class="studio-fabric-wrapper" aria-label="Panel editor with speech bubbles">
+          <canvas id="studio-fabric-canvas" aria-label="Comic panel editor canvas" tabindex="0" role="img" aria-description="Interactive panel editor. Use keyboard or mouse to select and edit speech bubbles."></canvas>
+        </div>
+
+        <!-- Panel Navigation (for multi-page output) -->
+        <nav class="studio-panel-nav" aria-label="Panel page navigation">
+          <button class="studio-panel-nav-btn" id="studio-panel-prev" aria-label="Previous panel page" disabled><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <span class="studio-panel-nav-indicator" aria-live="polite" aria-atomic="true">Page <span id="studio-panel-page-num">1</span> of <span id="studio-panel-total-pages">1</span></span>
+          <button class="studio-panel-nav-btn" id="studio-panel-next" aria-label="Next panel page"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </nav>
+
+        <!-- Panel Thumbnail Strip -->
+        <div class="studio-thumbnail-strip" aria-label="Generated pages thumbnails" role="list">
+          <!-- Dynamically populated by JS -->
+        </div>
+
+        <!-- Speech Bubble Editor Toolbar -->
+        <div class="speech-bubble-toolbar" id="speech-bubble-toolbar" role="toolbar" aria-label="Speech bubble editor" hidden>
+          <div class="bubble-toolbar-group" role="group" aria-label="Bubble type">
+            <button class="bubble-tool-btn bubble-tool-btn--active" data-bubble-type="speech" aria-pressed="true" aria-label="Speech bubble">&#x1F4AC; Speech</button>
+            <button class="bubble-tool-btn" data-bubble-type="thought" aria-pressed="false" aria-label="Thought bubble">&#x2601;&#xFE0F; Thought</button>
+            <button class="bubble-tool-btn" data-bubble-type="shout" aria-pressed="false" aria-label="Shout bubble">&#x1F4E3; Shout</button>
+            <button class="bubble-tool-btn" data-bubble-type="caption" aria-pressed="false" aria-label="Caption box">&#x1F4CB; Caption</button>
+            <button class="bubble-tool-btn" data-bubble-type="sfx" aria-pressed="false" aria-label="SFX text">&#x1F4A5; SFX</button>
+          </div>
+          <div class="bubble-toolbar-group" role="group" aria-label="Font options">
+            <label for="bubble-font-select" class="sr-only">Bubble font</label>
+            <select id="bubble-font-select" class="select-input select-input--compact" aria-label="Speech bubble font">
+              <option value="Bangers">Bangers (Comic)</option>
+              <option value="Outfit">Outfit</option>
+              <option value="Space Grotesk">Space Grotesk</option>
+            </select>
+            <label for="bubble-font-size" class="sr-only">Font size</label>
+            <select id="bubble-font-size" class="select-input select-input--compact" aria-label="Font size">
+              <option value="12">12px</option>
+              <option value="14">14px</option>
+              <option value="16" selected>16px</option>
+              <option value="18">18px</option>
+              <option value="20">20px</option>
+              <option value="24">24px</option>
+            </select>
+          </div>
+          <div class="bubble-toolbar-group" role="group" aria-label="Bubble colours">
+            <label class="sr-only">Bubble fill colour</label>
+            <input type="color" id="bubble-fill-color" value="#FFFFFF" aria-label="Bubble fill colour"/>
+            <label class="sr-only">Text colour</label>
+            <input type="color" id="bubble-text-color" value="#111827" aria-label="Text colour"/>
+          </div>
+          <div class="bubble-toolbar-group" role="group" aria-label="Edit actions">
+            <button class="bubble-tool-btn" id="bubble-delete-btn" aria-label="Delete selected bubble">&#x1F5D1;&#xFE0F; Delete</button>
+            <button class="bubble-tool-btn" id="bubble-duplicate-btn" aria-label="Duplicate selected bubble">&#x1F4CB; Dupe</button>
+            <button class="bubble-tool-btn" id="bubble-bring-front-btn" aria-label="Bring to front">&#x2B06;&#xFE0F; Front</button>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</section>
+<!-- /view-studio -->
+
+</main>
+<!-- /main content -->
+
+
+<!-- ═══════════════════════════════════════════════════════
+     GLOBAL OVERLAYS & PANELS
+═══════════════════════════════════════════════════════ -->
+
+<!-- Search Overlay -->
+<div id="search-overlay" class="search-overlay" role="dialog" aria-modal="true" aria-label="Search Komicrew" hidden>
+  <div class="search-overlay-backdrop" id="search-backdrop" aria-hidden="true"></div>
+  <div class="search-overlay-container">
+    <form class="search-form" id="search-form" role="search" aria-label="Search for comics" novalidate>
+      <label for="global-search-input" class="sr-only">Search comics, genres, and creators</label>
+      <div class="search-input-wrapper">
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2.5"/><path d="M15 15l3 3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <input type="search" id="global-search-input" class="search-input" name="q" placeholder="Search comics, genres, or @creators..." autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-controls="search-results-list" aria-describedby="search-kbd-hint" autofocus/>
+        <kbd class="search-close-kbd" aria-hidden="true">ESC</kbd>
+        <button type="button" class="search-clear-btn" id="search-clear-btn" aria-label="Clear search" hidden>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="search-genre-quick-tags" aria-label="Quick genre search tags" role="group">
+        <span class="search-tags-label" aria-hidden="true">Popular:</span>
+        <button type="button" class="search-quick-tag" data-search-query="Cyberpunk">Cyberpunk</button>
+        <button type="button" class="search-quick-tag" data-search-query="Fantasy">Fantasy</button>
+        <button type="button" class="search-quick-tag" data-search-query="Horror">Horror</button>
+        <button type="button" class="search-quick-tag" data-search-query="AI-Made">AI-Made</button>
+        <button type="button" class="search-quick-tag" data-search-query="New">New This Week</button>
+      </div>
+    </form>
+
+    <div class="search-results-area" aria-label="Search results">
+      <div id="search-recent" class="search-results-section" aria-labelledby="search-recent-heading">
+        <h3 id="search-recent-heading" class="search-results-heading">Recent Searches</h3>
+        <ul id="search-recent-list" class="search-result-list" role="list" aria-label="Recent searches"></ul>
+        <button class="search-clear-recent-btn" id="clear-recent-searches-btn" aria-label="Clear recent searches">Clear</button>
+      </div>
+      <div id="search-results-live" class="search-results-section" aria-label="Live search results" hidden>
+        <h3 class="search-results-heading" aria-live="polite"><span id="search-results-count">0</span> results for &ldquo;<span id="search-query-echo"></span>&rdquo;</h3>
+        <ul id="search-results-list" class="search-result-list" role="listbox" aria-label="Search results" aria-live="polite" aria-atomic="false"></ul>
+      </div>
+    </div>
+  </div>
+  <button class="search-overlay-close-btn" id="search-overlay-close-btn" aria-label="Close search">&#x2715;</button>
+</div>
+
+<!-- Bookmarks Slide-over Panel -->
+<aside id="bookmarks-panel" class="bookmarks-panel slide-panel" aria-label="Your bookmarks" role="dialog" aria-modal="true" hidden>
+  <div class="slide-panel-header">
+    <h2 class="slide-panel-title">&#x1F516; Bookmarks</h2>
+    <button class="slide-panel-close-btn" id="bookmarks-panel-close-btn" aria-label="Close bookmarks panel">&#x2715;</button>
+  </div>
+  <div class="slide-panel-body">
+    <div id="bookmarks-empty" class="bookmarks-empty" aria-label="No bookmarks yet" hidden>
+      <p>&#x1F516; You haven&rsquo;t saved anything yet.</p>
+      <p class="bookmarks-empty-sub">Hit the bookmark icon on any comic to save it here.</p>
+    </div>
+    <ol id="bookmarks-list" class="bookmarks-list" role="list" aria-label="Saved comics" aria-live="polite"></ol>
+  </div>
+</aside>
+
+<!-- Notifications Panel -->
+<aside id="notifications-panel" class="notifications-panel slide-panel" aria-label="Notifications" role="dialog" aria-modal="true" hidden>
+  <div class="slide-panel-header">
+    <h2 class="slide-panel-title">&#x1F514; Notifications</h2>
+    <button class="slide-panel-close-btn" id="notifications-panel-close-btn" aria-label="Close notifications panel">&#x2715;</button>
+    <button class="btn btn--ghost btn--sm mark-all-read-btn" id="mark-all-read-btn" aria-label="Mark all notifications as read">Mark all read</button>
+  </div>
+  <div class="slide-panel-body">
+    <ol class="notifications-list" id="notifications-list" role="list" aria-label="Notification list" aria-live="polite">
+      <li class="notification-item notification-item--unread" id="notif-1"><article aria-labelledby="notif-1-title"><div class="notification-icon" aria-hidden="true">&#x1F4E5;</div><div class="notification-body"><p id="notif-1-title" class="notification-title"><strong>Cyber Samurai 2099</strong> has a new chapter available!</p><time class="notification-time" datetime="2026-09-06T10:00:00Z">1 day ago</time></div><div class="notification-actions"><button class="notification-mark-read-btn" aria-label="Mark as read" title="Mark as read">&#x25CF;</button><button class="notification-dismiss-btn" aria-label="Dismiss notification" title="Dismiss">&#x2715;</button></div></article></li>
+      <li class="notification-item notification-item--unread" id="notif-2"><article aria-labelledby="notif-2-title"><div class="notification-icon" aria-hidden="true">&#x2764;&#xFE0F;</div><div class="notification-body"><p id="notif-2-title" class="notification-title">A reader liked your newly published chapter.</p><time class="notification-time" datetime="2026-09-06T07:00:00Z">2 hours ago</time></div><div class="notification-actions"><button class="notification-mark-read-btn" aria-label="Mark as read" title="Mark as read">&#x25CF;</button><button class="notification-dismiss-btn" aria-label="Dismiss notification" title="Dismiss">&#x2715;</button></div></article></li>
+      <li class="notification-item notification-item--unread" id="notif-3"><article aria-labelledby="notif-3-title"><div class="notification-icon" aria-hidden="true">&#x2728;</div><div class="notification-body"><p id="notif-3-title" class="notification-title">Your AI generation is <strong>complete</strong>! View your comic in Studio.</p><time class="notification-time" datetime="2026-09-06T08:30:00Z">30 minutes ago</time></div><div class="notification-actions"><button class="notification-mark-read-btn" aria-label="Mark as read" title="Mark as read">&#x25CF;</button><button class="notification-dismiss-btn" aria-label="Dismiss notification" title="Dismiss">&#x2715;</button></div></article></li>
+    </ol>
+  </div>
+</aside>
+
+<!-- Global Overlay Backdrop -->
+<div id="global-overlay-backdrop" class="global-overlay-backdrop" aria-hidden="true" hidden></div>
+
+<!-- Publish Modal -->
+<div id="publish-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="publish-modal-title" hidden>
+  <div class="modal-overlay" id="publish-modal-overlay" aria-hidden="true"></div>
+  <div class="modal-container">
+    <header class="modal-header">
+      <h2 id="publish-modal-title" class="modal-title">&#x1F680; Publish Your Comic</h2>
+      <button class="modal-close-btn" id="publish-modal-close" aria-label="Close publish modal">&#x2715;</button>
+    </header>
+    <form class="modal-body" id="publish-form" novalidate aria-label="Publish comic form">
+      <div class="studio-form-group">
+        <label class="studio-label" for="publish-title-input">Comic Title <span aria-hidden="true">*</span></label>
+        <input type="text" id="publish-title-input" name="publish_title" class="studio-input" placeholder="Final title for your comic" required aria-required="true"/>
+      </div>
+      <div class="studio-form-group">
+        <label class="studio-label" for="publish-synopsis-input">Synopsis</label>
+        <textarea id="publish-synopsis-input" name="publish_synopsis" class="studio-textarea studio-textarea--sm" rows="4" placeholder="Short description of your comic&hellip;" maxlength="500" aria-describedby="publish-synopsis-count"></textarea>
+        <span id="publish-synopsis-count" class="char-counter" aria-live="polite">0 / 500</span>
+      </div>
+      <div class="studio-form-row studio-form-row--two-col">
+        <div class="studio-form-group">
+          <label class="studio-label" for="publish-category-select">Category</label>
+          <select id="publish-category-select" name="category" class="select-input"><option value="">Select category...</option><option value="shonen">Shonen</option><option value="seinen">Seinen</option><option value="romance">Romance</option><option value="isekai">Isekai</option><option value="webtoon-originals">Webtoon Originals</option><option value="slice-of-life">Slice of Life</option></select>
+        </div>
+        <div class="studio-form-group">
+          <label class="studio-label" for="publish-visibility">Visibility</label>
+          <select id="publish-visibility" name="visibility" class="select-input"><option value="public">Public</option><option value="unlisted">Unlisted</option><option value="draft">Draft (Private)</option></select>
+        </div>
+      </div>
+      <fieldset class="studio-fieldset">
+        <legend class="studio-legend">Tags</legend>
+        <div id="publish-tags-wrapper" class="tags-input-wrapper">
+          <ul id="publish-tags-list" class="tags-list" role="list" aria-label="Added tags"></ul>
+          <input type="text" id="publish-tags-input" class="tags-text-input" placeholder="Type a tag and press Enter..." aria-label="Add a tag, press Enter to confirm" maxlength="30"/>
+        </div>
+      </fieldset>
+      <label class="studio-checkbox-label">
+        <input type="checkbox" id="publish-ai-disclosure" name="ai_disclosure" class="studio-checkbox" checked aria-describedby="ai-disclosure-hint"/>
+        <span>Disclose that this comic was AI-generated</span>
+      </label>
+      <p id="ai-disclosure-hint" class="studio-hint-text">Helps readers understand how this comic was made. &#x2713; Recommended.</p>
+      <footer class="modal-footer">
+        <button type="button" class="btn btn--ghost" id="save-as-draft-btn">Save as Draft</button>
+        <button type="submit" class="btn btn--primary" id="publish-submit-btn">Publish Comic</button>
+      </footer>
+    </form>
+  </div>
+</div>
+
+<!-- Toast Notifications Container -->
+<div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="false" aria-label="Notifications" role="status"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     GLOBAL FOOTER
+═══════════════════════════════════════════════════════ -->
+<footer id="global-footer" role="contentinfo" aria-label="Site footer">
+  <div class="footer-inner">
+
+    <div class="footer-brand-col">
+      <a href="#" class="footer-brand-logo" aria-label="Komicrew Home" data-view-target="landing">
+        <span class="logo-wordmark"><span class="logo-komi">Komi</span><span class="logo-crew">crew</span></span>
+      </a>
+      <p class="footer-tagline">Read. Create. Remix.<br/>The world&rsquo;s first AI-powered comic studio and reader platform.</p>
+      <div class="footer-social-links" aria-label="Komicrew on social media">
+        <a href="https://twitter.com/komicrew" class="footer-social-link" aria-label="Komicrew on X / Twitter" target="_blank" rel="noopener noreferrer">&#x1D54F;</a>
+        <a href="https://instagram.com/komicrew" class="footer-social-link" aria-label="Komicrew on Instagram" target="_blank" rel="noopener noreferrer">&#x1F4F8;</a>
+        <a href="https://discord.gg/komicrew" class="footer-social-link" aria-label="Komicrew on Discord" target="_blank" rel="noopener noreferrer">&#x1F5E8;&#xFE0F;</a>
+        <a href="https://reddit.com/r/komicrew" class="footer-social-link" aria-label="Komicrew on Reddit" target="_blank" rel="noopener noreferrer">&#x1F916;</a>
+      </div>
+    </div>
+
+    <nav class="footer-links-col" aria-label="Discover">
+      <h3 class="footer-col-heading">Discover</h3>
+      <ul role="list">
+        <li><a href="#" class="footer-link" data-view-target="browse">Browse Comics</a></li>
+        <li><a href="#" class="footer-link" data-view-target="browse" data-filter-genre="action">Action</a></li>
+        <li><a href="#" class="footer-link" data-view-target="browse" data-filter-genre="cyberpunk">Cyberpunk</a></li>
+        <li><a href="#" class="footer-link" data-view-target="browse" data-filter-genre="fantasy">Fantasy</a></li>
+        <li><a href="#" class="footer-link" data-view-target="browse" data-filter="ai-made">AI-Generated</a></li>
+        <li><a href="#" class="footer-link" data-view-target="browse" data-filter="new">New This Week</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-links-col" aria-label="Create">
+      <h3 class="footer-col-heading">Create</h3>
+      <ul role="list">
+        <li><a href="#" class="footer-link" data-view-target="studio">AI Studio</a></li>
+        <li><a href="#" class="footer-link" data-action="coming-soon" data-label="Script Templates">Script Templates</a></li>
+        <li><a href="#" class="footer-link" data-action="coming-soon" data-label="Art Style Guide">Art Style Guide</a></li>
+        <li><a href="#" class="footer-link" data-action="coming-soon" data-label="Community Forum">Community Forum</a></li>
+        <li><a href="#" class="footer-link" data-action="coming-soon" data-label="Creator Resources">Creator Resources</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-links-col" aria-label="Company">
+      <h3 class="footer-col-heading">Komicrew</h3>
+      <ul role="list">
+        <li><a href="#" class="footer-link" data-action="coming-soon" data-label="About">About</a></li>
+        <li><a href="#" class="footer-link" data-action="coming-soon" data-label="Blog">Blog</a></li>
+        <li><a href="#" class="footer-link" data-action="coming-soon" data-label="Careers">Careers</a></li>
+        <li><a href="#" class="footer-link" data-action="coming-soon" data-label="Press Kit">Press Kit</a></li>
+        <li><a href="#" class="footer-link" data-action="coming-soon" data-label="API Docs">API Docs</a></li>
+        <li><a href="mailto:hello@komicrew.com" class="footer-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-newsletter-col">
+      <h3 class="footer-col-heading">Stay in the loop</h3>
+      <p class="footer-newsletter-desc">New drops, AI updates, and creator spotlights &mdash; weekly, no spam.</p>
+      <form class="footer-newsletter-form" id="newsletter-form" aria-label="Newsletter sign-up" novalidate>
+        <label for="newsletter-email" class="sr-only">Your email address</label>
+        <div class="newsletter-input-group">
+          <input type="email" id="newsletter-email" name="email" class="studio-input" placeholder="your@email.com" required aria-required="true" autocomplete="email" spellcheck="false"/>
+          <button type="submit" class="btn btn--primary newsletter-submit-btn" aria-label="Subscribe to newsletter">Subscribe</button>
+        </div>
+        <p id="newsletter-form-message" class="newsletter-form-message" aria-live="polite" aria-atomic="true"></p>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom-bar">
+    <p class="footer-copyright">&copy; <span id="footer-year">2026</span> Komicrew, Inc. All rights reserved.</p>
+    <nav class="footer-legal-links" aria-label="Legal links">
+      <a href="#" class="footer-legal-link" data-action="coming-soon" data-label="Privacy Policy">Privacy Policy</a>
+      <a href="#" class="footer-legal-link" data-action="coming-soon" data-label="Terms of Service">Terms of Service</a>
+      <a href="#" class="footer-legal-link" data-action="coming-soon" data-label="Cookie Policy">Cookie Policy</a>
+      <a href="#" class="footer-legal-link" data-action="coming-soon" data-label="Content Guidelines">Content Guidelines</a>
+      <a href="#" class="footer-legal-link" data-action="coming-soon" data-label="Accessibility">Accessibility</a>
+    </nav>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     AUTHENTICATION MODAL (LOGIN & SIGN UP)
+═══════════════════════════════════════════════════════ -->
+<div id="auth-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title" hidden>
+  <div class="modal-overlay" id="auth-modal-overlay" aria-hidden="true"></div>
+  <div class="modal-container auth-modal-container">
+    <header class="modal-header">
+      <div class="auth-tabs" role="tablist" aria-label="Authentication modes">
+        <button class="auth-tab-btn auth-tab-btn--active" id="auth-tab-login" role="tab" aria-selected="true" aria-controls="auth-panel-login">Sign In</button>
+        <button class="auth-tab-btn" id="auth-tab-signup" role="tab" aria-selected="false" aria-controls="auth-panel-signup">Create Account</button>
+      </div>
+      <button class="modal-close-btn" id="auth-modal-close" aria-label="Close authentication modal">&#x2715;</button>
+    </header>
+
+    <div class="modal-body auth-modal-body">
+
+      <!-- Sign In Form -->
+      <form id="login-form" class="auth-form" aria-labelledby="auth-tab-login" novalidate>
+        <div class="studio-form-group">
+          <label class="studio-label" for="login-email">Username or Email</label>
+          <input type="text" id="login-email" name="login" class="studio-input" placeholder="e.g. username or user@komicrew.app" required autocomplete="username"/>
+        </div>
+        <div class="studio-form-group">
+          <label class="studio-label" for="login-password">Password</label>
+          <input type="password" id="login-password" name="password" class="studio-input" placeholder="••••••••" required autocomplete="current-password"/>
+        </div>
+        <div class="auth-extra-row">
+          <label class="studio-checkbox-label">
+            <input type="checkbox" id="login-remember" checked class="studio-checkbox"/>
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="auth-forgot-link" id="forgot-password-link">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full-width" id="login-submit-btn">
+          Sign In to Komicrew
+        </button>
+      </form>
+
+      <!-- Sign Up Form -->
+      <form id="signup-form" class="auth-form" aria-labelledby="auth-tab-signup" hidden novalidate>
+        <div class="studio-form-group">
+          <label class="studio-label" for="signup-username">Creator / Reader Handle</label>
+          <input type="text" id="signup-username" name="username" class="studio-input" placeholder="e.g. comic_fan_99" required autocomplete="username"/>
+        </div>
+        <div class="studio-form-group">
+          <label class="studio-label" for="signup-email">Email Address</label>
+          <input type="email" id="signup-email" name="email" class="studio-input" placeholder="you@domain.com" required autocomplete="email"/>
+        </div>
+        <div class="studio-form-group">
+          <label class="studio-label" for="signup-password">Create Password (6+ characters)</label>
+          <input type="password" id="signup-password" name="password" class="studio-input" placeholder="••••••••" minlength="6" required autocomplete="new-password"/>
+        </div>
+        <div class="studio-form-group">
+          <label class="studio-label" for="signup-role">I want to join primarily as:</label>
+          <select id="signup-role" name="role" class="select-input">
+            <option value="creator">Creator (Make AI Comics &amp; Scripts)</option>
+            <option value="reader">Reader (Browse, Bookmark &amp; React)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full-width" id="signup-submit-btn">
+          Create Free Account 🚀
+        </button>
+      </form>
+
+      <!-- Social Login Demo -->
+      <div class="auth-divider"><span>OR CONTINUE WITH</span></div>
+      <div class="auth-social-row">
+        <button type="button" class="btn btn--ghost auth-social-btn" id="social-google-btn">
+          <span>🌐 Google</span>
+        </button>
+        <button type="button" class="btn btn--ghost auth-social-btn" id="social-discord-btn">
+          <span>💬 Discord</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     CREATOR TIP JAR & PULSECOINS MODAL
+═══════════════════════════════════════════════════════ -->
+<div id="tip-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="tip-modal-title" hidden>
+  <div class="modal-overlay" id="tip-modal-overlay" aria-hidden="true"></div>
+  <div class="modal-container tip-modal-container">
+    <header class="modal-header">
+      <div>
+        <span class="admin-badge-pill" style="background: var(--pop-coral);">CREATOR APPRECIATION</span>
+        <h2 class="modal-title" id="tip-modal-title" style="margin-top: 4px;">⚡ Support Creator</h2>
+      </div>
+      <button class="modal-close-btn" id="tip-modal-close" aria-label="Close modal">&#x2715;</button>
+    </header>
+
+    <div class="modal-body">
+      <div class="tip-creator-profile">
+        <img src="assets/img/avatar-user.jpg" alt="Creator avatar" width="56" height="56" id="tip-creator-avatar" class="tip-avatar"/>
+        <div>
+          <strong id="tip-creator-name">@creator</strong>
+          <span class="tip-creator-sub" id="tip-comic-name">Featured Comic Creator</span>
+        </div>
+      </div>
+
+      <p class="tip-desc">Send PulseCoins to support the author and unlock exclusive behind-the-scenes sketch panels!</p>
+
+      <div class="tip-amounts-grid">
+        <label class="tip-amount-card">
+          <input type="radio" name="tip_amount" value="50" checked class="tip-amount-radio"/>
+          <div class="tip-amount-box">
+            <span class="tip-coins-val">50 ⚡</span>
+            <span class="tip-fiat-val">$0.50 USD</span>
+          </div>
+        </label>
+        <label class="tip-amount-card">
+          <input type="radio" name="tip_amount" value="200" class="tip-amount-radio"/>
+          <div class="tip-amount-box">
+            <span class="tip-coins-val">200 ⚡</span>
+            <span class="tip-fiat-val">$2.00 USD</span>
+          </div>
+        </label>
+        <label class="tip-amount-card">
+          <input type="radio" name="tip_amount" value="500" class="tip-amount-radio"/>
+          <div class="tip-amount-box">
+            <span class="tip-coins-val">500 ⚡</span>
+            <span class="tip-fiat-val">$5.00 USD</span>
+            <span class="tip-popular-tag">POPULAR</span>
+          </div>
+        </label>
+        <label class="tip-amount-card">
+          <input type="radio" name="tip_amount" value="1000" class="tip-amount-radio"/>
+          <div class="tip-amount-box">
+            <span class="tip-coins-val">1000 ⚡</span>
+            <span class="tip-fiat-val">$10.00 USD</span>
+          </div>
+        </label>
+      </div>
+
+      <div class="studio-form-group" style="margin-top: 14px;">
+        <label class="studio-label" for="tip-custom-message">Add a supportive note (optional):</label>
+        <input type="text" id="tip-custom-message" class="studio-input" placeholder="Keep up the incredible artwork!" />
+      </div>
+
+      <button type="button" class="btn btn--coral btn--full-width" id="tip-submit-btn" style="margin-top: 16px; padding: 14px; font-size: 1.1rem;">
+        Send Tip &amp; Trigger Confetti 🎉
+      </button>
+    </div>
+  </div>
+</div>
+<!-- ═══════════════════════════════════════════════════════
+     PROFILE & CREATOR STUDIO DASHBOARD MODAL
+═══════════════════════════════════════════════════════ -->
+<div id="profile-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="profile-modal-title" hidden>
+  <div class="modal-overlay" id="profile-modal-overlay" aria-hidden="true"></div>
+  <div class="modal-container profile-modal-container">
+    <header class="profile-modal-header">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span class="admin-badge-pill" style="background: var(--pop-purple-lite);">CREATOR HUB</span>
+        <h2 class="modal-title" id="profile-modal-title" style="margin:0; font-size:1.6rem;">⚡ Creator Profile &amp; Studio</h2>
+      </div>
+      <button class="modal-close-btn" id="profile-modal-close" aria-label="Close modal">&#x2715;</button>
+    </header>
+
+    <nav class="profile-modal-nav" role="tablist" aria-label="Profile sections">
+      <button type="button" class="profile-tab-btn profile-tab-btn--active" id="profile-tab-overview-btn" role="tab" aria-selected="true" data-profile-tab="overview">👤 Overview</button>
+      <button type="button" class="profile-tab-btn" id="profile-tab-comics-btn" role="tab" aria-selected="false" data-profile-tab="comics">🎨 My Comics</button>
+      <button type="button" class="profile-tab-btn" id="profile-tab-wallet-btn" role="tab" aria-selected="false" data-profile-tab="wallet">⚡ PulseCoins Wallet</button>
+      <button type="button" class="profile-tab-btn" id="profile-tab-bookmarks-btn" role="tab" aria-selected="false" data-profile-tab="bookmarks">🔖 Bookmarks</button>
+      <button type="button" class="profile-tab-btn" id="profile-tab-settings-btn" role="tab" aria-selected="false" data-profile-tab="settings">⚙️ Edit Profile</button>
+    </nav>
+
+    <div class="profile-modal-body">
+      <!-- ─── TAB 1: OVERVIEW ─── -->
+      <div id="profile-panel-overview" class="profile-tab-panel" role="tabpanel">
+        <div class="profile-hero-card">
+          <div class="profile-hero-avatar-wrap">
+            <img src="assets/img/avatar-user.jpg" alt="User Avatar" class="profile-hero-avatar" id="profile-card-avatar" />
+          </div>
+          <div class="profile-hero-info">
+            <div class="profile-hero-header">
+              <span class="profile-hero-name" id="profile-card-name">Creator</span>
+              <span class="profile-hero-tag" id="profile-card-handle">@creator</span>
+              <span class="hero-status-pill" id="profile-card-tier" style="background: var(--pop-purple-lite); color:#fff;">Creator Tier</span>
+            </div>
+            <p class="profile-hero-bio" id="profile-card-bio">Digital manga artist and AI comic storyboarder exploring sci-fi &amp; cyberpunk worlds on Komicrew.</p>
+          </div>
+        </div>
+
+        <div class="profile-stats-grid">
+          <div class="profile-stat-box">
+            <span class="profile-stat-val" id="profile-stat-published">0</span>
+            <span class="profile-stat-lbl">Published Comics</span>
+          </div>
+          <div class="profile-stat-box">
+            <span class="profile-stat-val" id="profile-stat-reads">0</span>
+            <span class="profile-stat-lbl">Total Reads</span>
+          </div>
+          <div class="profile-stat-box">
+            <span class="profile-stat-val" id="profile-stat-coins" style="color:var(--pop-yellow);">1,250 ⚡</span>
+            <span class="profile-stat-lbl">PulseCoins</span>
+          </div>
+          <div class="profile-stat-box">
+            <span class="profile-stat-val" id="profile-stat-bookmarks">0</span>
+            <span class="profile-stat-lbl">Bookmarks</span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 12px;">
+          <button type="button" class="btn btn--primary btn--full-width" id="profile-open-studio-btn">Launch AI Comic Studio &rarr;</button>
+        </div>
+      </div>
+
+      <!-- ─── TAB 2: MY COMICS ─── -->
+      <div id="profile-panel-comics" class="profile-tab-panel" role="tabpanel" hidden>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+          <h3 style="margin:0; font-size:1.1rem;">My Published &amp; Draft Series</h3>
+          <button type="button" class="btn btn--secondary btn--sm" id="profile-new-comic-btn">+ Create New</button>
+        </div>
+        <div class="profile-comic-list" id="profile-comics-container">
+          <p style="color:var(--text-muted); font-size:0.9rem; text-align:center; padding:24px 0;">No comics published yet. Start creating in the AI Studio!</p>
+        </div>
+      </div>
+
+      <!-- ─── TAB 3: WALLET ─── -->
+      <div id="profile-panel-wallet" class="profile-tab-panel" role="tabpanel" hidden>
+        <div class="profile-wallet-hero">
+          <span style="font-size:0.85rem; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted);">Available PulseCoins Balance</span>
+          <div class="profile-wallet-balance" id="profile-wallet-balance-val">1,250 ⚡</div>
+          <p style="font-size:0.85rem; color:var(--text-secondary); margin:0;">Use PulseCoins to tip favorite creators, generate ultra-high-res panels, and unlock premium early-access chapters.</p>
+        </div>
+
+        <h3 style="font-size:1rem; margin:16px 0 10px;">Quick PulseCoins Top-Up</h3>
+        <div class="topup-grid">
+          <button type="button" class="topup-btn" data-coins="100" data-price="0.99">
+            <span class="topup-coins">100 ⚡</span>
+            <span class="topup-price">$0.99 USD</span>
+          </button>
+          <button type="button" class="topup-btn" data-coins="500" data-price="4.49">
+            <span class="topup-coins">500 ⚡</span>
+            <span class="topup-price">$4.49 USD</span>
+          </button>
+          <button type="button" class="topup-btn" data-coins="1200" data-price="9.99">
+            <span class="topup-coins">1,200 ⚡</span>
+            <span class="topup-price">$9.99 USD</span>
+          </button>
+          <button type="button" class="topup-btn" data-coins="5000" data-price="34.99">
+            <span class="topup-coins">5,000 ⚡</span>
+            <span class="topup-price">$34.99 USD</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ─── TAB 4: BOOKMARKS ─── -->
+      <div id="profile-panel-bookmarks" class="profile-tab-panel" role="tabpanel" hidden>
+        <h3 style="margin:0 0 14px; font-size:1.1rem;">Saved Series Bookmarks</h3>
+        <div class="profile-comic-list" id="profile-bookmarks-container">
+          <p style="color:var(--text-muted); font-size:0.9rem; text-align:center; padding:24px 0;">No bookmarked comics yet. Click the bookmark icon on any comic card to save for later!</p>
+        </div>
+      </div>
+
+      <!-- ─── TAB 5: SETTINGS ─── -->
+      <div id="profile-panel-settings" class="profile-tab-panel" role="tabpanel" hidden>
+        <form id="profile-settings-form">
+          <div class="studio-form-group">
+            <label class="studio-label" for="profile-edit-name">Display Name</label>
+            <input type="text" id="profile-edit-name" class="studio-input" required />
+          </div>
+          <div class="studio-form-group">
+            <label class="studio-label" for="profile-edit-handle">Username / Handle</label>
+            <input type="text" id="profile-edit-handle" class="studio-input" required />
+          </div>
+          <div class="studio-form-group">
+            <label class="studio-label" for="profile-edit-bio">Creator Bio</label>
+            <textarea id="profile-edit-bio" class="studio-textarea" rows="3" placeholder="Tell readers about your stories..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary" style="margin-top:12px;">Save Profile Changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     STUDIO MULTI-FORMAT EXPORT SUITE MODAL
+═══════════════════════════════════════════════════════ -->
+<div id="export-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="export-modal-title" hidden>
+  <div class="modal-overlay" id="export-modal-overlay" aria-hidden="true"></div>
+  <div class="modal-container export-modal-container">
+    <header class="modal-header">
+      <div>
+        <span class="admin-badge-pill" style="background: var(--pop-yellow); color: var(--ink);">AI STUDIO EXPORTER</span>
+        <h2 class="modal-title" id="export-modal-title" style="margin-top:4px;">📥 Export &amp; Download Suite</h2>
+      </div>
+      <button class="modal-close-btn" id="export-modal-close" aria-label="Close modal">&#x2715;</button>
+    </header>
+
+    <div class="modal-body">
+      <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:16px;">
+        Choose your desired export format for the active comic script and visual canvas panels:
+      </p>
+
+      <div class="export-options-grid">
+        <button type="button" class="export-card" id="export-action-png">
+          <span class="export-badge">HIGH-RES</span>
+          <div class="export-card-icon">🖼️</div>
+          <div class="export-card-title">Super-Sampled PNG</div>
+          <div class="export-card-desc">Download active canvas and bubbles at 2x crisp print resolution.</div>
+        </button>
+
+        <button type="button" class="export-card" id="export-action-pdf">
+          <span class="export-badge" style="background: var(--pop-coral);">DOCUMENT</span>
+          <div class="export-card-icon">📑</div>
+          <div class="export-card-title">Comic Chapter PDF</div>
+          <div class="export-card-desc">Compile complete comic page document ready for sharing or reading.</div>
+        </button>
+
+        <button type="button" class="export-card" id="export-action-clipboard">
+          <span class="export-badge" style="background: var(--pop-green); color: var(--ink);">INSTANT</span>
+          <div class="export-card-icon">📋</div>
+          <div class="export-card-title">Copy to Clipboard</div>
+          <div class="export-card-desc">Directly copy the image to clipboard for instant pasting to Discord or Photoshop.</div>
+        </button>
+
+        <button type="button" class="export-card" id="export-action-json">
+          <span class="export-badge" style="background: var(--text-muted);">SOURCE</span>
+          <div class="export-card-icon">💾</div>
+          <div class="export-card-title">JSON Script &amp; Layout</div>
+          <div class="export-card-desc">Export the raw dialogue, panel breakdowns, and text bubble coords.</div>
+        </button>
+      </div>
+
+      <button type="button" class="btn btn--ghost btn--full-width" id="export-modal-cancel">Close</button>
+    </div>
+  </div>
+</div>
+
+<canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════════════════ -->
+<script src="assets/js/fabric.min.js"></script>
+<script src="assets/js/panelpulse.js" defer></script>
+
+</body>
+</html>

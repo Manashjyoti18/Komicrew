@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Rounded Tactile Neo-Comic Background Card -->
+  <rect x="3" y="3" width="58" height="58" rx="14" fill="#111827"/>
+  <rect x="2" y="2" width="56" height="56" rx="12" fill="#FACC15" stroke="#111827" stroke-width="3"/>
+  
+  <!-- Comic Dynamic Shadow / Offset Panel -->
+  <path d="M12 14h40v36H12z" fill="#0A0C12" opacity="0.15" transform="translate(2, 2)"/>
+  
+  <!-- Stylized Geometric "K" + Comic Speed Action Sparks (100% Original Vector) -->
+  <!-- Left Main Vertical Ink Bar -->
+  <rect x="14" y="14" width="8" height="36" rx="2" fill="#111827"/>
+  
+  <!-- Top Diagonal Arrow / Action Slash with Coral Accents -->
+  <path d="M38 15L23 30h8l15-15h-8z" fill="#F43F5E" stroke="#111827" stroke-width="2" stroke-linejoin="round"/>
+  
+  <!-- Bottom Diagonal Dynamic Kick Slash -->
+  <path d="M25 30l16 20h9L33 30h-8z" fill="#8B5CF6" stroke="#111827" stroke-width="2" stroke-linejoin="round"/>
+  
+  <!-- Electric AI / Comic Pulse Spark -->
+  <polygon points="46,25 53,28 48,31 54,37 45,34 43,41 41,33 35,33 40,29 36,24 43,26" fill="#06B6D4" stroke="#111827" stroke-width="1.5"/>
+  
+  <!-- Tactile Comic Dot Halftone Accent -->
+  <circle cx="28" cy="20" r="2" fill="#111827"/>
+  <circle cx="34" cy="45" r="2" fill="#111827"/>
+</svg>
