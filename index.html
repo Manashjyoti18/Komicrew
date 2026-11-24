@@ -229,12 +229,51 @@
 
     <!-- Mobile Nav Drawer -->
     <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile navigation" hidden>
-      <nav aria-label="Mobile menu">
+      <div class="mobile-drawer-header">
+        <div class="mobile-drawer-brand">
+          <span class="logo-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+              <rect x="4" y="4" width="4" height="20" rx="1.5" fill="#111827"/>
+              <path d="M19 4L9 14h5.5l9.5-10h-5z" fill="#F43F5E" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M11 14l9 10h5.5L16.5 14h-5.5z" fill="#8B5CF6" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+              <polygon points="23,11 26,12.5 24,14 27,17 22,15.5 21,19 20,15 17,15 19,13 17,11 21,12" fill="#06B6D4" stroke="#111827" stroke-width="1"/>
+            </svg>
+          </span>
+          <span class="logo-wordmark"><span class="logo-komi">Komi</span><span class="logo-crew">crew</span></span>
+        </div>
+        <button class="mobile-drawer-close-btn" id="mobile-drawer-close" aria-label="Close navigation menu">✕</button>
+      </div>
+
+      <!-- Mobile Drawer Auth Actions (Guest or Logged In) -->
+      <div class="mobile-drawer-auth" id="mobile-drawer-auth">
+        <a href="login.html" class="btn btn--ghost" id="mobile-login-btn">Sign In</a>
+        <a href="signup.html" class="btn btn--primary" id="mobile-signup-btn">Join Free</a>
+      </div>
+
+      <!-- Mobile Drawer Quick Utilities -->
+      <div class="mobile-drawer-utilities">
+        <button type="button" class="mobile-drawer-util-btn" id="mobile-drawer-bookmarks" aria-label="Open Bookmarks">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 2h10a1 1 0 011 1v13l-6-4-6 4V3a1 1 0 011-1z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <span>Bookmarks</span>
+        </button>
+        <button type="button" class="mobile-drawer-util-btn" id="mobile-drawer-notifications" aria-label="Open Notifications">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 1.5a5.5 5.5 0 00-5.5 5.5v3.5L2 12.5h14l-1.5-2V7A5.5 5.5 0 009 1.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M7 14.5a2 2 0 004 0" stroke="currentColor" stroke-width="2"/></svg>
+          <span>Notifications</span>
+          <span class="notification-badge" style="position:static; margin-left:auto;">3</span>
+        </button>
+        <button type="button" class="mobile-drawer-util-btn" id="mobile-drawer-theme" aria-label="Toggle Theme">
+          <svg class="theme-icon theme-icon--moon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M15.5 11A7 7 0 017 2.5a7 7 0 100 13 7 7 0 008.5-4.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="theme-icon theme-icon--sun" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="4" stroke="currentColor" stroke-width="2"/><path d="M9 1v2M9 15v2M1 9h2M15 9h2M3.2 3.2l1.4 1.4M13.4 13.4l1.4 1.4M3.2 14.8l1.4-1.4M13.4 4.6l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span id="mobile-drawer-theme-label">Dark / Light Mode</span>
+        </button>
+      </div>
+
+      <nav aria-label="Mobile menu navigation">
         <ul class="mobile-nav-list" role="list">
-          <li><a href="#" class="mobile-nav-link" data-view-target="landing">&#x1F3E0; Discover</a></li>
+          <li><a href="#" class="mobile-nav-link" data-view-target="landing">🏠 Discover</a></li>
           <li>
             <details class="mobile-nav-details">
-              <summary class="mobile-nav-link">&#x2694;&#xFE0F; Categories</summary>
+              <summary class="mobile-nav-link">⚔️ Categories</summary>
               <ul class="mobile-nav-submenu" role="list">
                 <li><a href="#" data-view-target="browse" data-filter-category="shonen">Shonen</a></li>
                 <li><a href="#" data-view-target="browse" data-filter-category="seinen">Seinen</a></li>
@@ -247,7 +286,7 @@
           </li>
           <li>
             <details class="mobile-nav-details">
-              <summary class="mobile-nav-link">&#x1F3A8; Genres</summary>
+              <summary class="mobile-nav-link">🎨 Genres</summary>
               <ul class="mobile-nav-submenu" role="list">
                 <li><a href="#" data-view-target="browse" data-filter-genre="action">Action</a></li>
                 <li><a href="#" data-view-target="browse" data-filter-genre="cyberpunk">Cyberpunk</a></li>
@@ -258,9 +297,7 @@
               </ul>
             </details>
           </li>
-          <li><a href="#" class="mobile-nav-link" data-view-target="studio">&#x2728; AI Studio</a></li>
-
-          <li><a href="#" class="mobile-nav-link">&#x1F516; Bookmarks</a></li>
+          <li><a href="#" class="mobile-nav-link" data-view-target="studio">✨ AI Studio</a></li>
         </ul>
       </nav>
     </aside>

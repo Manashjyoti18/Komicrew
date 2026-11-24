@@ -427,6 +427,24 @@
       }
     });
 
+    // Close button inside drawer
+    qs('#mobile-drawer-close')?.addEventListener('click', closeMobileMenu);
+
+    // Bookmarks, Notifications, and Theme triggers inside drawer
+    qs('#mobile-drawer-bookmarks')?.addEventListener('click', () => {
+      closeMobileMenu();
+      qs('#bookmarks-trigger')?.click();
+    });
+
+    qs('#mobile-drawer-notifications')?.addEventListener('click', () => {
+      closeMobileMenu();
+      qs('#notifications-trigger')?.click();
+    });
+
+    qs('#mobile-drawer-theme')?.addEventListener('click', () => {
+      qs('#theme-toggle')?.click();
+    });
+
     // Auto-close when clicking any link inside the mobile drawer
     qsa('a', drawer).forEach((link) => {
       link.addEventListener('click', () => {
