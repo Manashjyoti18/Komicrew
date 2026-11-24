@@ -5903,30 +5903,30 @@ ul, ol {
 
   .nav-inner {
     height: 60px !important;
-    padding: var(--gr-md) var(--gr-lg) !important; /* 13px vertical, 21px horizontal */
+    padding: 0 var(--gr-md) !important; /* 13px horizontal padding ensures zero overflow */
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    gap: var(--gr-sm) !important;
+    gap: 6px !important;
   }
 
-  /* 1. Left: Brand Logo (28px icon + crisp wordmark, no tagline) */
+  /* 1. Left: Brand Logo (26px icon + crisp wordmark, no tagline) */
   .brand-logo {
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 6px !important;
     flex-shrink: 0 !important;
     text-decoration: none !important;
   }
   .logo-icon svg {
-    width: 28px !important;
-    height: 28px !important;
+    width: 26px !important;
+    height: 26px !important;
   }
   .logo-wordmark {
-    font-size: 1.35rem !important;
+    font-size: 1.25rem !important;
     font-weight: 900 !important;
     letter-spacing: -0.5px !important;
   }
@@ -5938,11 +5938,11 @@ ul, ol {
     display: none !important;
   }
 
-  /* 2. Right: Search (40x40), CREATE CTA (36px pill), Hamburger (40x40) */
+  /* 2. Right: Search (36x36), CREATE CTA (34px pill), Hamburger (36x36) */
   .nav-quick-actions {
     display: flex !important;
     align-items: center !important;
-    gap: var(--gr-sm) !important; /* 8px */
+    gap: 8px !important;
     flex-shrink: 0 !important;
   }
 
@@ -5950,20 +5950,21 @@ ul, ol {
     margin: 0 !important;
   }
   .nav-search-trigger {
-    width: 40px !important;
-    height: 40px !important;
-    min-width: 40px !important;
-    max-width: 40px !important;
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
     padding: 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    border-radius: var(--gr-md) !important; /* 13px */
+    border-radius: 10px !important;
     background: rgba(255, 255, 255, 0.08) !important;
     border: 1px solid rgba(255, 255, 255, 0.12) !important;
     color: #ffffff !important;
     cursor: pointer !important;
     transition: transform 0.1s ease !important;
+    flex-shrink: 0 !important;
   }
   .nav-search-trigger:active {
     transform: scale(0.97) !important;
@@ -5977,11 +5978,11 @@ ul, ol {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 6px !important;
-    height: 36px !important;
-    min-height: 36px !important;
-    padding: 0 var(--gr-md) !important; /* 13px padding */
-    font-size: 12px !important;
+    gap: 4px !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    padding: 0 10px !important;
+    font-size: 11px !important;
     font-weight: 800 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.5px !important;
@@ -5990,9 +5991,10 @@ ul, ol {
     background: var(--gr-gold) !important;
     color: var(--gr-dark) !important;
     border: none !important;
-    box-shadow: 0 2px 10px rgba(255, 214, 10, 0.35) !important;
+    box-shadow: 0 2px 8px rgba(255, 214, 10, 0.35) !important;
     text-decoration: none !important;
     transition: transform 0.1s ease !important;
+    flex-shrink: 0 !important;
   }
   #nav-create-btn:active {
     transform: scale(0.97) !important;
@@ -6008,23 +6010,24 @@ ul, ol {
     justify-content: center !important;
     align-items: center !important;
     gap: 4px !important;
-    width: 40px !important;
-    height: 40px !important;
-    min-width: 40px !important;
-    max-width: 40px !important;
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
     padding: 0 !important;
-    border-radius: var(--gr-md) !important; /* 13px */
+    border-radius: 10px !important;
     background: rgba(255, 255, 255, 0.08) !important;
     border: 1px solid rgba(255, 255, 255, 0.12) !important;
     color: #ffffff !important;
     cursor: pointer !important;
     transition: transform 0.1s ease !important;
+    flex-shrink: 0 !important;
   }
   #mobile-menu-trigger:active {
     transform: scale(0.97) !important;
   }
   .hamburger-bar {
-    width: 18px !important;
+    width: 16px !important;
     height: 2px !important;
     background: #ffffff !important;
     border-radius: 2px !important;
@@ -6386,8 +6389,8 @@ ul, ol {
   .discovery-filter-bar {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 0 var(--gr-lg) !important; /* 21px */
-    margin: var(--gr-xl) auto !important; /* 34px vertical gap */
+    padding: 0 var(--gr-md) !important; /* 13px padding */
+    margin: var(--gr-lg) auto !important; /* 21px vertical gap */
     box-sizing: border-box !important;
   }
   .filter-bar-inner {
@@ -6395,17 +6398,17 @@ ul, ol {
     background: var(--gr-card) !important;
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
     border-radius: var(--gr-md) !important; /* 13px */
-    padding: var(--gr-md) !important; /* 13px */
+    padding: 8px var(--gr-md) !important; /* 13px internal padding */
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    gap: var(--gr-md) !important; /* 13px */
+    gap: 8px !important;
     box-sizing: border-box !important;
   }
   .filter-tabs-scroll-wrapper {
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 6px !important;
     overflow-x: auto !important;
     scrollbar-width: none !important;
     -webkit-overflow-scrolling: touch !important;
@@ -6417,9 +6420,9 @@ ul, ol {
   }
   .filter-tab {
     flex-shrink: 0 !important;
-    height: 34px !important;
-    padding: 6px 16px !important;
-    font-size: 13px !important;
+    height: 32px !important;
+    padding: 4px 12px !important;
+    font-size: 12px !important;
     font-weight: 700 !important;
     border-radius: 9999px !important;
     white-space: nowrap !important;
@@ -6440,21 +6443,21 @@ ul, ol {
   .filter-bar-sort {
     display: flex !important;
     align-items: center !important;
-    gap: 6px !important;
+    gap: 4px !important;
     flex-shrink: 0 !important;
   }
   .filter-sort-label {
     display: none !important;
   }
   #sort-select {
-    height: 40px !important;
-    padding: 6px 12px !important;
-    font-size: 13px !important;
+    height: 34px !important;
+    padding: 4px 8px !important;
+    font-size: 12px !important;
     font-weight: 700 !important;
     background: rgba(255, 255, 255, 0.08) !important;
     color: #ffffff !important;
     border: 1px solid rgba(255, 255, 255, 0.14) !important;
-    border-radius: 10px !important;
+    border-radius: 8px !important;
     white-space: nowrap !important;
     cursor: pointer !important;
   }
